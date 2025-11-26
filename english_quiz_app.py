@@ -4,10 +4,10 @@ import pandas as pd
 import re
 
 # ==========================================
-# 1. 資料庫設定 (包含您 138 個單字 + AI 生成的例句)
-# 說明：資料庫已直接嵌入程式碼，以確保 App 獨立運行。
+# 1. 資料庫設定 (您的 138 個單字 + AI 生成的例句)
 # ==========================================
 
+# 您的資料庫內容（已包含例句）
 VOCAB_DB = [
     {
         "english": "application",
@@ -1300,22 +1300,25 @@ VOCAB_DB = [
 # ==========================================
 
 def get_distractors(correct_word, full_list, count=3, target_key='english'):
-    """從資料庫中隨機選取錯誤選項 (目標鍵可以是 english 或 chinese)"""
-    # 確保不會選到正確答案
+    """
+    功能：從資料庫中隨機選取錯誤選項 (干擾項)。
+    參數：target_key 指定回傳英文 ('english') 還是中文 ('chinese') 詞彙。
+    """
+    # 排除正確答案
     other_words = [w for w in full_list if w['english'] != correct_word['english']]
     
     # 確保資料量足夠
     if len(other_words) < count:
-        # 如果資料不足，回傳所有剩餘的
         distractors = other_words
     else:
         # 隨機選取指定數量的錯誤選項
         distractors = random.sample(other_words, count)
         
+    # 回傳干擾項的指定欄位值
     return [d[target_key] for d in distractors]
 
 def initialize_session_state():
-    """初始化頁面狀態，用於儲存當前題目"""
+    """初始化頁面狀態，用於儲存當前題目和回饋訊息"""
     if 'current_question' not in st.session_state:
         st.session_state.current_question = None
     if 'quiz_type' not in st.session_state:
@@ -1326,7 +1329,7 @@ def initialize_session_state():
         st.session_state.feedback_type = None
 
 def reset_quiz():
-    """重置測驗題目"""
+    """重置測驗題目及回饋狀態，為下一題做準備"""
     st.session_state.current_question = None
     st.session_state.feedback = None
     st.session_state.feedback_type = None
@@ -1334,15 +1337,16 @@ def reset_quiz():
 def display_feedback_and_next_button(quiz_key):
     """通用函式：顯示回饋並提供下一題按鈕"""
     if st.session_state.feedback:
+        # 1. 顯示回饋 (Success/Error)
         if st.session_state.feedback_type == 'success':
             st.success(st.session_state.feedback)
         else:
             st.error(st.session_state.feedback)
         
-        # 顯示下一題按鈕
+        # 2. 顯示下一題按鈕 (在提交 form 之外，保持狀態獨立)
         if st.button("下一題 ➡", key=f'next_{quiz_key}'):
             reset_quiz()
-            # 強制重新執行，以刷新題目
+            # 3. 點擊下一題時，才執行重啟 (Rerun)
             st.rerun()
 
 # ==========================================
@@ -1354,15 +1358,13 @@ def quiz_cloze_mc():
     st.subheader("🔤 克漏字測驗 (選擇題)")
     st.caption("請根據例句和中文提示，從選項中選出正確單字填入空格。")
     
-    # 檢查資料量
     if len(VOCAB_DB) < 4:
         st.warning("⚠️ 單字數量不足 4 個，無法生成選擇題。")
         return
 
-    # 抽取題目
+    # 抽取題目 (如果題目為空或類型不符，則重新生成)
     if st.session_state.current_question is None or st.session_state.quiz_type != 'cloze_mc':
         correct_word = random.choice(VOCAB_DB)
-        # 取得錯誤選項 (英文單字)
         distractors = get_distractors(correct_word, VOCAB_DB, 3, target_key='english')
         
         options = distractors + [correct_word['english']]
@@ -1378,7 +1380,7 @@ def quiz_cloze_mc():
     q = st.session_state.current_question
     target_word = q['correct']['english']
     
-    # 製作挖空例句 (忽略大小寫取代)
+    # 製作挖空例句
     pattern = re.compile(re.escape(target_word), re.IGNORECASE)
     question_sentence = pattern.sub("_______", q['correct']['example'])
     
@@ -1398,8 +1400,9 @@ def quiz_cloze_mc():
             else:
                 st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{target_word}**。"
                 st.session_state.feedback_type = "error"
-            # 重新運行以顯示結果
-            # st.rerun()
+            
+            # 【關鍵修正】提交後刷新頁面，顯示回饋和下一題按鈕
+            st.rerun() 
             
 
 def quiz_chinese_to_english():
@@ -1410,10 +1413,9 @@ def quiz_chinese_to_english():
         st.warning("⚠️ 單字數量不足 4 個，無法生成選擇題。")
         return
 
-    # 抽取題目
+    # 抽取題目 (如果題目為空或類型不符，則重新生成)
     if st.session_state.current_question is None or st.session_state.quiz_type != 'c_to_e':
         correct = random.choice(VOCAB_DB)
-        # 取得錯誤選項 (英文單字)
         distractors_eng = get_distractors(correct, VOCAB_DB, 3, target_key='english')
         
         options = distractors_eng + [correct['english']]
@@ -1444,7 +1446,9 @@ def quiz_chinese_to_english():
             else:
                 st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['english']}**。"
                 st.session_state.feedback_type = "error"
-            # st.rerun()
+            
+            # 【關鍵修正】提交後刷新頁面，顯示回饋和下一題按鈕
+            st.rerun()
 
 
 def quiz_english_to_chinese():
@@ -1455,10 +1459,9 @@ def quiz_english_to_chinese():
         st.warning("⚠️ 單字數量不足 4 個，無法生成選擇題。")
         return
 
-    # 抽取題目
+    # 抽取題目 (如果題目為空或類型不符，則重新生成)
     if st.session_state.current_question is None or st.session_state.quiz_type != 'e_to_c':
         correct = random.choice(VOCAB_DB)
-        # 取得錯誤選項 (中文意思)
         distractors_chi = get_distractors(correct, VOCAB_DB, 3, target_key='chinese')
         
         options = distractors_chi + [correct['chinese']]
@@ -1489,7 +1492,9 @@ def quiz_english_to_chinese():
             else:
                 st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['chinese']}**。"
                 st.session_state.feedback_type = "error"
-            # st.rerun()
+            
+            # 【關鍵修正】提交後刷新頁面，顯示回饋和下一題按鈕
+            st.rerun()
 
 
 # ==========================================
@@ -1517,18 +1522,21 @@ def main():
     tab1, tab2, tab3 = st.tabs(["🔤 克漏字 (選詞)", "🇨🇳➡🇬🇧 中翻英", "🇬🇧➡🇨🇳 英翻中"])
 
     with tab1:
+        # 重置當前類型不符的題目
+        if st.session_state.quiz_type and st.session_state.quiz_type != 'cloze_mc': reset_quiz()
         quiz_cloze_mc()
         display_feedback_and_next_button('cloze_mc')
 
     with tab2:
+        if st.session_state.quiz_type and st.session_state.quiz_type != 'c_to_e': reset_quiz()
         quiz_chinese_to_english()
         display_feedback_and_next_button('c_to_e')
 
     with tab3:
+        if st.session_state.quiz_type and st.session_state.quiz_type != 'e_to_c': reset_quiz()
         quiz_english_to_chinese()
         display_feedback_and_next_button('e_to_c')
 
 if __name__ == "__main__":
-
     main()
 
