@@ -1343,7 +1343,7 @@ def display_feedback_and_next_button(quiz_key):
         if st.button("下一題 ➡", key=f'next_{quiz_key}'):
             reset_quiz()
             # 強制重新執行，以刷新題目
-            st.experimental_rerun()
+            st.rerun()
 
 # ==========================================
 # 3. 測驗頁面組件 (全部為選擇題)
@@ -1399,7 +1399,7 @@ def quiz_cloze_mc():
                 st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{target_word}**。"
                 st.session_state.feedback_type = "error"
             # 重新運行以顯示結果
-            st.experimental_rerun()
+            st.rerun()
             
 
 def quiz_chinese_to_english():
@@ -1444,7 +1444,7 @@ def quiz_chinese_to_english():
             else:
                 st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['english']}**。"
                 st.session_state.feedback_type = "error"
-            st.experimental_rerun()
+            st.rerun()
 
 
 def quiz_english_to_chinese():
@@ -1489,7 +1489,7 @@ def quiz_english_to_chinese():
             else:
                 st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['chinese']}**。"
                 st.session_state.feedback_type = "error"
-            st.experimental_rerun()
+            st.rerun()
 
 
 # ==========================================
@@ -1529,4 +1529,5 @@ def main():
         display_feedback_and_next_button('e_to_c')
 
 if __name__ == "__main__":
+
     main()
