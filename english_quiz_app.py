@@ -2,6 +2,7 @@ import streamlit as st
 import random
 import pandas as pd
 import re
+import uuid
 
 # ==========================================
 # 1. 資料庫設定 (您的 138 個單字 + AI 生成的例句)
@@ -1370,7 +1371,9 @@ def quiz_cloze_mc():
         options = distractors + [correct_word['english']]
         random.shuffle(options)
         
+        # 新增唯一 id，並把 options 與 correct 一起存入 session
         st.session_state.current_question = {
+            "id": str(uuid.uuid4()),
             "correct": correct_word,
             "options": options
         }
@@ -1388,9 +1391,10 @@ def quiz_cloze_mc():
     st.markdown(f"### 例句: {question_sentence}")
     st.info(f"💡 中文提示: {q['correct']['chinese']} ({q['correct']['pos']})")
     
-    # 使用 form 處理選擇題
-    with st.form(key='cloze_mc_form'):
-        user_choice = st.radio("請選擇正確答案：", q['options'])
+    # 使用 form 處理選擇題，並為 radio 指定與題目綁定的唯一 key，避免舊選項值被錯誤重用
+    with st.form(key=f'cloze_mc_form_{q["id"]}'):
+        radio_key = f'cloze_mc_radio_{q["id"]}'
+        user_choice = st.radio("請選擇正確答案：", q['options'], key=radio_key)
         submit_btn = st.form_submit_button("提交答案")
         
         if submit_btn:
@@ -1401,7 +1405,7 @@ def quiz_cloze_mc():
                 st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{target_word}**。"
                 st.session_state.feedback_type = "error"
             
-            # 【關鍵修正】提交後刷新頁面，顯示回饋和下一題按鈕
+            # 只需要重新整理畫面以顯示 feedback（current_question 不變，直到使用者點下一題）
             st.rerun() 
             
 
@@ -1422,6 +1426,7 @@ def quiz_chinese_to_english():
         random.shuffle(options)
         
         st.session_state.current_question = {
+            "id": str(uuid.uuid4()),
             "correct": correct,
             "options": options
         }
@@ -1434,9 +1439,10 @@ def quiz_chinese_to_english():
     st.markdown(f"### 中文：<span style='color:#007bff'>{correct_word['chinese']}</span>", unsafe_allow_html=True)
     st.write(f"詞性：{correct_word['pos']}")
     
-    # 顯示選項
-    with st.form(key='c_to_e_form'):
-        user_choice = st.radio("請選擇正確的英文單字：", q['options'])
+    # 顯示選項，使用與題目綁定的 key
+    with st.form(key=f'c_to_e_form_{q["id"]}'):
+        radio_key = f'c_to_e_radio_{q["id"]}'
+        user_choice = st.radio("請選擇正確的英文單字：", q['options'], key=radio_key)
         submit_btn = st.form_submit_button("提交答案")
         
         if submit_btn:
@@ -1447,7 +1453,6 @@ def quiz_chinese_to_english():
                 st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['english']}**。"
                 st.session_state.feedback_type = "error"
             
-            # 【關鍵修正】提交後刷新頁面，顯示回饋和下一題按鈕
             st.rerun()
 
 
@@ -1468,6 +1473,7 @@ def quiz_english_to_chinese():
         random.shuffle(options)
         
         st.session_state.current_question = {
+            "id": str(uuid.uuid4()),
             "correct": correct,
             "options": options
         }
@@ -1480,9 +1486,10 @@ def quiz_english_to_chinese():
     st.markdown(f"### 英文：<span style='color:#e83e8c'>{correct_word['english']}</span>", unsafe_allow_html=True)
     st.write(f"詞性：{correct_word['pos']}")
     
-    # 顯示選項
-    with st.form(key='e_to_c_form'):
-        user_choice = st.radio("請選擇正確的中文意思：", q['options'])
+    # 顯示選項，使用與題目綁定的 key
+    with st.form(key=f'e_to_c_form_{q["id"]}'):
+        radio_key = f'e_to_c_radio_{q["id"]}'
+        user_choice = st.radio("請選擇正確的中文意思：", q['options'], key=radio_key)
         submit_btn = st.form_submit_button("提交答案")
         
         if submit_btn:
@@ -1493,7 +1500,6 @@ def quiz_english_to_chinese():
                 st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['chinese']}**。"
                 st.session_state.feedback_type = "error"
             
-            # 【關鍵修正】提交後刷新頁面，顯示回饋和下一題按鈕
             st.rerun()
 
 
@@ -1539,4 +1545,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
