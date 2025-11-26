@@ -1335,6 +1335,16 @@ def reset_quiz():
     st.session_state.feedback = None
     st.session_state.feedback_type = None
 
+def format_word_info(word):
+    """格式化單字資訊，用於回饋訊息中顯示完整單字資訊"""
+    return (
+        f"\n\n📝 單字資訊：\n"
+        f"• 英文：{word['english']}\n"
+        f"• 詞性：{word['pos']}\n"
+        f"• 中文：{word['chinese']}\n"
+        f"• 例句：{word['example']}"
+    )
+
 def display_feedback_and_next_button(quiz_key):
     """通用函式：顯示回饋並提供下一題按鈕"""
     if st.session_state.feedback:
@@ -1398,15 +1408,16 @@ def quiz_cloze_mc():
         submit_btn = st.form_submit_button("提交答案")
         
         if submit_btn:
+            word_info = format_word_info(q['correct'])
             if user_choice == target_word:
-                st.session_state.feedback = f"🎉 **正確！** 答案是 **{target_word}**。"
+                st.session_state.feedback = f"🎉 **正確！** 答案是 **{target_word}**。{word_info}"
                 st.session_state.feedback_type = "success"
             else:
-                st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{target_word}**。"
+                st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{target_word}**。{word_info}"
                 st.session_state.feedback_type = "error"
             
             # 只需要重新整理畫面以顯示 feedback（current_question 不變，直到使用者點下一題）
-            st.rerun() 
+            st.rerun()
             
 
 def quiz_chinese_to_english():
@@ -1446,11 +1457,12 @@ def quiz_chinese_to_english():
         submit_btn = st.form_submit_button("提交答案")
         
         if submit_btn:
+            word_info = format_word_info(correct_word)
             if user_choice == correct_word['english']:
-                st.session_state.feedback = f"🎉 **正確！** **{correct_word['english']}** = {correct_word['chinese']}"
+                st.session_state.feedback = f"🎉 **正確！** **{correct_word['english']}** = {correct_word['chinese']}。{word_info}"
                 st.session_state.feedback_type = "success"
             else:
-                st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['english']}**。"
+                st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['english']}**。{word_info}"
                 st.session_state.feedback_type = "error"
             
             st.rerun()
@@ -1493,11 +1505,12 @@ def quiz_english_to_chinese():
         submit_btn = st.form_submit_button("提交答案")
         
         if submit_btn:
+            word_info = format_word_info(correct_word)
             if user_choice == correct_word['chinese']:
-                st.session_state.feedback = f"🎉 **正確！** **{correct_word['english']}** 的意思是 {correct_word['chinese']}"
+                st.session_state.feedback = f"🎉 **正確！** **{correct_word['english']}** 的意思是 {correct_word['chinese']}。{word_info}"
                 st.session_state.feedback_type = "success"
             else:
-                st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['chinese']}**。"
+                st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['chinese']}**。{word_info}"
                 st.session_state.feedback_type = "error"
             
             st.rerun()
