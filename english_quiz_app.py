@@ -373,7 +373,7 @@ VOCAB_DB = [
     {
         "english": "spare",
         "chinese": "備用的",
-        "pos": "nadj",
+        "pos": "adj.",
         "example": "Always keep a **spare** tire in the trunk of your car for emergencies."
     },
     {
@@ -391,7 +391,7 @@ VOCAB_DB = [
     {
         "english": "clearance",
         "chinese": "清倉, 准許",
-        "pos": "n",
+        "pos": "n.",
         "example": "The store is holding a huge **clearance** sale to make room for new inventory."
     },
     {
@@ -409,7 +409,7 @@ VOCAB_DB = [
     {
         "english": "fabric",
         "chinese": "布料",
-        "pos": "n",
+        "pos": "n.",
         "example": "She chose a silk **fabric** to make her wedding dress."
     },
     {
@@ -427,19 +427,19 @@ VOCAB_DB = [
     {
         "english": "grant",
         "chinese": "(研究)獎助金",
-        "pos": "n",
+        "pos": "n.",
         "example": "The scientist applied for a large **grant** to fund his space exploration project."
     },
     {
         "english": "directory",
         "chinese": "通訊錄",
-        "pos": "n",
+        "pos": "n.",
         "example": "You can find all the staff contact details in the company **directory**."
     },
     {
         "english": "contrary",
         "chinese": "相反(情況)",
-        "pos": "n",
+        "pos": "n.",
         "example": "On the **contrary**, his statements are not based on facts."
     },
     {
@@ -463,7 +463,7 @@ VOCAB_DB = [
     {
         "english": "forest",
         "chinese": "森林",
-        "pos": "n",
+        "pos": "n.",
         "example": "The hikers spent the entire day walking through the dense national **forest**."
     },
     {
@@ -493,13 +493,13 @@ VOCAB_DB = [
     {
         "english": "consequence",
         "chinese": "後果",
-        "pos": "n",
+        "pos": "n.",
         "example": "Failing to wear a seatbelt can have serious **consequence** in a car accident."
     },
     {
         "english": "overview",
         "chinese": "概要",
-        "pos": "n",
+        "pos": "n.",
         "example": "The manager provided a brief **overview** of the project during the meeting."
     },
     {
@@ -517,31 +517,31 @@ VOCAB_DB = [
     {
         "english": "outlook",
         "chinese": "前景",
-        "pos": "n",
+        "pos": "n.",
         "example": "The economic **outlook** for the next fiscal year seems quite positive."
     },
     {
         "english": "expertise",
         "chinese": "專門知識",
-        "pos": "n",
+        "pos": "n.",
         "example": "We rely on his technical **expertise** to solve these complex engineering problems."
     },
     {
         "english": "expert",
         "chinese": "專家",
-        "pos": "n",
+        "pos": "n.",
         "example": "She is considered a leading **expert** in the field of quantum physics."
     },
     {
         "english": "remainder",
         "chinese": "剩餘的東西",
-        "pos": "n",
+        "pos": "n.",
         "example": "Please finish the main course, and I will pack the **remainder** for you."
     },
     {
         "english": "reminder",
         "chinese": "作為提醒的東西",
-        "pos": "n",
+        "pos": "n.",
         "example": "I set a phone **reminder** so I wouldn't forget my dentist appointment."
     },
     {
@@ -570,7 +570,7 @@ VOCAB_DB = [
     },
     {
         "english": "acquaint",
-        "chinese": "使..熟悉",
+        "chinese": "使.. 熟悉",
         "pos": "v.",
         "example": "We need to **acquaint** the new employees with the office safety procedures."
     },
@@ -583,8 +583,8 @@ VOCAB_DB = [
     {
         "english": "instruct",
         "chinese": "指示",
-        "pos": "n",
-        "example": "The manual provides clear **instruct** on how to set up the new computer system."
+        "pos": "v.",
+        "example": "The manual provides clear instructions on how to set up the new computer system."
     },
     {
         "english": "delegate",
@@ -595,7 +595,7 @@ VOCAB_DB = [
     {
         "english": "delegate",
         "chinese": "代表",
-        "pos": "n",
+        "pos": "n.",
         "example": "The country sent a **delegate** to attend the international peace conference."
     },
     {
@@ -614,12 +614,12 @@ VOCAB_DB = [
         "english": "prohibit",
         "chinese": "禁止",
         "pos": "v.",
-        "example": "Smoking is strictly **prohibit** in all indoor areas of the building."
+        "example": "Smoking is strictly **prohibited** in all indoor areas of the building."
     },
     {
         "english": "legislation",
         "chinese": "立法",
-        "pos": "n",
+        "pos": "n.",
         "example": "New **legislation** was passed to protect consumers from identity theft."
     },
     {
@@ -641,10 +641,10 @@ VOCAB_DB = [
         "example": "We should not **assume** that the project will be finished on time; we need a backup plan."
     },
     {
-        "english": "persume",
+        "english": "presume",
         "chinese": "假設, 承擔",
         "pos": "v.",
-        "example": "I **persume** that you have already contacted the client with the good news."
+        "example": "I **presume** that you have already contacted the client with the good news."
     },
     {
         "english": "resume",
@@ -673,13 +673,13 @@ VOCAB_DB = [
     {
         "english": "corporation",
         "chinese": "法人",
-        "pos": "n",
+        "pos": "n.",
         "example": "The multinational **corporation** employs thousands of people across the globe."
     },
     {
         "english": "cooperation",
         "chinese": "合作",
-        "pos": "n",
+        "pos": "n.",
         "example": "The successful project was a result of excellent **cooperation** between the two teams."
     },
     {
@@ -709,7 +709,7 @@ VOCAB_DB = [
     {
         "english": "advice",
         "chinese": "勸告",
-        "pos": "n",
+        "pos": "n.",
         "example": "She gave me some excellent **advice** on how to prepare for the interview."
     },
     {
@@ -721,7 +721,7 @@ VOCAB_DB = [
     {
         "english": "means",
         "chinese": "方法, 手段",
-        "pos": "n",
+        "pos": "n.",
         "example": "The internet is a vital **means** of communication in the modern world."
     },
     {
@@ -769,13 +769,13 @@ VOCAB_DB = [
     {
         "english": "incentive",
         "chinese": "獎勵(金)",
-        "pos": "n",
+        "pos": "n.",
         "example": "The company offered a financial **incentive** to employees who met their sales targets."
     },
     {
         "english": "mastermind",
         "chinese": "策畫者",
-        "pos": "n",
+        "pos": "n.",
         "example": "The police are still searching for the **mastermind** behind the large bank robbery."
     },
     {
@@ -787,7 +787,7 @@ VOCAB_DB = [
     {
         "english": "boom",
         "chinese": "繁榮",
-        "pos": "n",
+        "pos": "n.",
         "example": "The city experienced an economic **boom** after the new factory opened."
     },
     {
@@ -805,7 +805,7 @@ VOCAB_DB = [
     {
         "english": "prosperity",
         "chinese": "繁榮",
-        "pos": "n",
+        "pos": "n.",
         "example": "The government aims to achieve economic **prosperity** and stability for all citizens."
     },
     {
@@ -823,13 +823,13 @@ VOCAB_DB = [
     {
         "english": "wane",
         "chinese": "衰退",
-        "pos": "n",
+        "pos": "v.",
         "example": "Enthusiasm for the new management proposal began to **wane** after initial excitement."
     },
     {
         "english": "depression",
         "chinese": "不景氣",
-        "pos": "n",
+        "pos": "n.",
         "example": "The country suffered a deep economic **depression** that lasted for several years."
     },
     {
@@ -849,18 +849,6 @@ VOCAB_DB = [
         "chinese": "決定",
         "pos": "v.",
         "example": "The quality control team must **determine** if the product meets safety standards."
-    },
-    {
-        "english": "determine",
-        "chinese": "查明",
-        "pos": "v.",
-        "example": "The scientists are working to **determine** the cause of the mysterious illness."
-    },
-    {
-        "english": "determine",
-        "chinese": "決心",
-        "pos": "v.",
-        "example": "She **determine** to finish the marathon, despite her injury."
     },
     {
         "english": "dedicate",
@@ -887,12 +875,6 @@ VOCAB_DB = [
         "example": "The contractor must **estimate** the total cost of the renovations before starting work."
     },
     {
-        "english": "estimate",
-        "chinese": "估計",
-        "pos": "n.",
-        "example": "We received an initial **estimate** for the home repair, but the final cost may vary."
-    },
-    {
         "english": "eliminate",
         "chinese": "消除",
         "pos": "v.",
@@ -911,22 +893,10 @@ VOCAB_DB = [
         "example": "The manufacturer will **guarantee** the product against any defect for five years."
     },
     {
-        "english": "guarantee",
-        "chinese": "保證書",
-        "pos": "n.",
-        "example": "Always keep your original purchase **guarantee** in case you need warranty service."
-    },
-    {
         "english": "modify",
         "chinese": "修改",
         "pos": "v.",
         "example": "You may need to **modify** the software settings to improve its performance."
-    },
-    {
-        "english": "modify",
-        "chinese": "更改",
-        "pos": "v.",
-        "example": "The chef decided to **modify** the traditional recipe by adding a modern twist."
     },
     {
         "english": "obligate",
@@ -944,19 +914,19 @@ VOCAB_DB = [
         "english": "postpone",
         "chinese": "延期",
         "pos": "v.",
-        "example": "Due to heavy rain, the outdoor concert had to be **postpone** until the following week."
+        "example": "Due to heavy rain, the outdoor concert had to be **postponed** until the following week."
     },
     {
         "english": "delay",
         "chinese": "延期",
         "pos": "v.",
-        "example": "Technical issues **delay** the launch of the new product by several hours."
+        "example": "Technical issues **delayed** the launch of the new product by several hours."
     },
     {
         "english": "possess",
         "chinese": "擁有",
         "pos": "v.",
-        "example": "The old woman **possess** a rare collection of antique silver coins."
+        "example": "The old woman **possesses** a rare collection of antique silver coins."
     },
     {
         "english": "reduce",
@@ -986,7 +956,7 @@ VOCAB_DB = [
         "english": "suspend",
         "chinese": "暫停",
         "pos": "v.",
-        "example": "The train service was temporarily **suspend** due to an unforeseen accident on the tracks."
+        "example": "The train service was temporarily **suspended** due to an unforeseen accident on the tracks."
     },
     {
         "english": "verify",
@@ -1034,7 +1004,7 @@ VOCAB_DB = [
         "english": "counsel",
         "chinese": "勸告",
         "pos": "n.",
-        "example": "The school guidance **counsel** helped the student choose the right university major."
+        "example": "The school guidance **counselor** helped the student choose the right university major."
     },
     {
         "english": "counter",
@@ -1110,7 +1080,7 @@ VOCAB_DB = [
     },
     {
         "english": "justify",
-        "chinese": "證明..是正當的",
+        "chinese": "證明.. 是正當的",
         "pos": "v.",
         "example": "You must be able to **justify** your decision with concrete facts and data."
     },
@@ -1197,12 +1167,6 @@ VOCAB_DB = [
         "chinese": "抗議",
         "pos": "v.",
         "example": "Workers gathered outside the factory to **protest** the poor working conditions."
-    },
-    {
-        "english": "protest",
-        "chinese": "抗議",
-        "pos": "n.",
-        "example": "The large-scale **protest** forced the government to reconsider the new policy."
     },
     {
         "english": "rarely",
@@ -1331,9 +1295,9 @@ def initialize_session_state():
 
 def reset_quiz():
     """重置測驗題目及回饋狀態，為下一題做準備"""
-    st.session_state.current_question = None
+    st. session_state.current_question = None
     st.session_state.feedback = None
-    st.session_state.feedback_type = None
+    st. session_state.feedback_type = None
 
 def format_word_info(word):
     """格式化單字資訊，用於回饋訊息中顯示完整單字資訊"""
@@ -1352,7 +1316,7 @@ def display_feedback_and_next_button(quiz_key):
         if st.session_state.feedback_type == 'success':
             st.success(st.session_state.feedback)
         else:
-            st.error(st.session_state.feedback)
+            st.error(st. session_state.feedback)
         
         # 2. 顯示下一題按鈕 (在提交 form 之外，保持狀態獨立)
         if st.button("下一題 ➡", key=f'next_{quiz_key}'):
@@ -1361,13 +1325,13 @@ def display_feedback_and_next_button(quiz_key):
             st.rerun()
 
 # ==========================================
-# 3. 測驗頁面組件 (全部為選擇題)
+# 3.  測驗頁面組件 (全部為選擇題)
 # ==========================================
 
 def quiz_cloze_mc():
     """克漏字測驗 (Contextual Multiple Choice)"""
     st.subheader("🔤 克漏字測驗 (選擇題)")
-    st.caption("請根據例句和中文提示，從選項中選出正確單字填入空格。")
+    st.caption("請根據例句和中文提示,從選項中選出正確單字填入空格。")
     
     if len(VOCAB_DB) < 4:
         st.warning("⚠️ 單字數量不足 4 個，無法生成選擇題。")
@@ -1411,13 +1375,13 @@ def quiz_cloze_mc():
             word_info = format_word_info(q['correct'])
             if user_choice == target_word:
                 st.session_state.feedback = f"🎉 **正確！** 答案是 **{target_word}**。{word_info}"
-                st.session_state.feedback_type = "success"
+                st. session_state.feedback_type = "success"
             else:
                 st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{target_word}**。{word_info}"
                 st.session_state.feedback_type = "error"
             
             # 只需要重新整理畫面以顯示 feedback（current_question 不變，直到使用者點下一題）
-            st.rerun()
+            st.rerun() 
             
 
 def quiz_chinese_to_english():
@@ -1434,7 +1398,7 @@ def quiz_chinese_to_english():
         distractors_eng = get_distractors(correct, VOCAB_DB, 3, target_key='english')
         
         options = distractors_eng + [correct['english']]
-        random.shuffle(options)
+        random. shuffle(options)
         
         st.session_state.current_question = {
             "id": str(uuid.uuid4()),
@@ -1459,7 +1423,7 @@ def quiz_chinese_to_english():
         if submit_btn:
             word_info = format_word_info(correct_word)
             if user_choice == correct_word['english']:
-                st.session_state.feedback = f"🎉 **正確！** **{correct_word['english']}** = {correct_word['chinese']}。{word_info}"
+                st.session_state. feedback = f"🎉 **正確！** **{correct_word['english']}** = {correct_word['chinese']}。{word_info}"
                 st.session_state.feedback_type = "success"
             else:
                 st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['english']}**。{word_info}"
@@ -1478,7 +1442,7 @@ def quiz_english_to_chinese():
 
     # 抽取題目 (如果題目為空或類型不符，則重新生成)
     if st.session_state.current_question is None or st.session_state.quiz_type != 'e_to_c':
-        correct = random.choice(VOCAB_DB)
+        correct = random. choice(VOCAB_DB)
         distractors_chi = get_distractors(correct, VOCAB_DB, 3, target_key='chinese')
         
         options = distractors_chi + [correct['chinese']]
@@ -1489,19 +1453,19 @@ def quiz_english_to_chinese():
             "correct": correct,
             "options": options
         }
-        st.session_state.quiz_type = 'e_to_c'
-        st.session_state.feedback = None
+        st. session_state.quiz_type = 'e_to_c'
+        st.session_state. feedback = None
 
     q = st.session_state.current_question
     correct_word = q['correct']
     
-    st.markdown(f"### 英文：<span style='color:#e83e8c'>{correct_word['english']}</span>", unsafe_allow_html=True)
+    st. markdown(f"### 英文：<span style='color:#e83e8c'>{correct_word['english']}</span>", unsafe_allow_html=True)
     st.write(f"詞性：{correct_word['pos']}")
     
     # 顯示選項，使用與題目綁定的 key
     with st.form(key=f'e_to_c_form_{q["id"]}'):
         radio_key = f'e_to_c_radio_{q["id"]}'
-        user_choice = st.radio("請選擇正確的中文意思：", q['options'], key=radio_key)
+        user_choice = st. radio("請選擇正確的中文意思：", q['options'], key=radio_key)
         submit_btn = st.form_submit_button("提交答案")
         
         if submit_btn:
@@ -1510,14 +1474,14 @@ def quiz_english_to_chinese():
                 st.session_state.feedback = f"🎉 **正確！** **{correct_word['english']}** 的意思是 {correct_word['chinese']}。{word_info}"
                 st.session_state.feedback_type = "success"
             else:
-                st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['chinese']}**。{word_info}"
+                st.session_state. feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['chinese']}**。{word_info}"
                 st.session_state.feedback_type = "error"
             
             st.rerun()
 
 
 # ==========================================
-# 4. 主程式介面 (Main)
+# 4.  主程式介面 (Main)
 # ==========================================
 
 def main():
@@ -1529,9 +1493,9 @@ def main():
     
     # 側邊欄：顯示資料庫狀態
     with st.sidebar:
-        st.header("📊 資料庫狀態")
+        st. header("📊 資料庫狀態")
         st.write(f"單字總數：**{len(VOCAB_DB)}** 個")
-        st.markdown("---")
+        st. markdown("---")
         st.write("📖 **單字列表**")
         df = pd.DataFrame(VOCAB_DB)
         st.dataframe(df[['english', 'chinese', 'pos']], height=300, hide_index=True)
@@ -1542,20 +1506,24 @@ def main():
 
     with tab1:
         # 重置當前類型不符的題目
-        if st.session_state.quiz_type and st.session_state.quiz_type != 'cloze_mc': reset_quiz()
+        if st.session_state.quiz_type and st.session_state.quiz_type != 'cloze_mc': 
+            reset_quiz()
         quiz_cloze_mc()
         display_feedback_and_next_button('cloze_mc')
 
     with tab2:
-        if st.session_state.quiz_type and st.session_state.quiz_type != 'c_to_e': reset_quiz()
+        if st.session_state.quiz_type and st.session_state.quiz_type != 'c_to_e': 
+            reset_quiz()
         quiz_chinese_to_english()
         display_feedback_and_next_button('c_to_e')
 
     with tab3:
-        if st.session_state.quiz_type and st.session_state.quiz_type != 'e_to_c': reset_quiz()
+        if st. session_state.quiz_type and st.session_state.quiz_type != 'e_to_c': 
+            reset_quiz()
         quiz_english_to_chinese()
         display_feedback_and_next_button('e_to_c')
 
 if __name__ == "__main__":
     main()
+
 
