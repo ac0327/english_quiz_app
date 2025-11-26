@@ -1399,7 +1399,7 @@ def quiz_cloze_mc():
                 st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{target_word}**。"
                 st.session_state.feedback_type = "error"
             # 重新運行以顯示結果
-            st.rerun()
+            # st.rerun()
             
 
 def quiz_chinese_to_english():
@@ -1444,7 +1444,7 @@ def quiz_chinese_to_english():
             else:
                 st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['english']}**。"
                 st.session_state.feedback_type = "error"
-            st.rerun()
+            # st.rerun()
 
 
 def quiz_english_to_chinese():
@@ -1489,7 +1489,7 @@ def quiz_english_to_chinese():
             else:
                 st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['chinese']}**。"
                 st.session_state.feedback_type = "error"
-            st.rerun()
+            # st.rerun()
 
 
 # ==========================================
@@ -1531,3 +1531,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
