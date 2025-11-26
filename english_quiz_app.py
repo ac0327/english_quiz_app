@@ -1259,15 +1259,25 @@ VOCAB_DB = [
         "example": "Maintaining good communication is **vital** for the success of any team."
     }
 ]
-# 初始化 session state
-if 'question_id' not in st.session_state:
-    st.session_state. question_id = 0
-if 'question' not in st. session_state:
-    st. session_state.question = None
-if 'submitted' not in st.session_state:
-    st.session_state.submitted = False
-if 'quiz_mode' not in st.session_state:
-    st.session_state.quiz_mode = None
+# 初始化
+def init_state():
+    if 'cloze_qid' not in st.session_state:
+        st.session_state.cloze_qid = 0
+        st.session_state.cloze_q = None
+        st.session_state. cloze_submitted = False
+        st.session_state.cloze_answer = None
+    
+    if 'c2e_qid' not in st.session_state:
+        st.session_state.c2e_qid = 0
+        st.session_state.c2e_q = None
+        st.session_state.c2e_submitted = False
+        st.session_state.c2e_answer = None
+    
+    if 'e2c_qid' not in st.session_state:
+        st.session_state.e2c_qid = 0
+        st.session_state.e2c_q = None
+        st.session_state.e2c_submitted = False
+        st. session_state.e2c_answer = None
 
 def generate_question(mode):
     """生成新題目"""
@@ -1275,9 +1285,7 @@ def generate_question(mode):
     others = [w for w in VOCAB_DB if w['english'] != correct['english']]
     distractors = random.sample(others, min(3, len(others)))
     
-    if mode == 'cloze':
-        options = [d['english'] for d in distractors] + [correct['english']]
-    elif mode == 'c2e':
+    if mode in ['cloze', 'c2e']:
         options = [d['english'] for d in distractors] + [correct['english']]
     else:  # e2c
         options = [d['chinese'] for d in distractors] + [correct['chinese']]
@@ -1285,15 +1293,11 @@ def generate_question(mode):
     random.shuffle(options)
     return {'correct': correct, 'options': options}
 
-def reset_question(mode):
-    """重置題目"""
-    st.session_state. question_id += 1
-    st.session_state.question = generate_question(mode)
-    st.session_state.submitted = False
-
 def main():
     st.set_page_config(page_title="英文單字測驗", page_icon="📚", layout="centered")
     st.title("🎓 英文單字特訓 App")
+    
+    init_state()
     
     tab1, tab2, tab3 = st.tabs(["🔤 克漏字", "🇨🇳➡🇬🇧 中翻英", "🇬🇧➡🇨🇳 英翻中"])
     
@@ -1301,94 +1305,76 @@ def main():
     with tab1:
         st.subheader("克漏字測驗")
         
-        # 切換模式時重置
-        if st.session_state. quiz_mode != 'cloze':
-            st.session_state.quiz_mode = 'cloze'
-            reset_question('cloze')
-        
         # 生成新題
-        if st.session_state.question is None:
-            reset_question('cloze')
+        if st.session_state.cloze_q is None:
+            st.session_state.cloze_q = generate_question('cloze')
+            st.session_state.cloze_submitted = False
         
-        q = st.session_state.question
+        q = st.session_state.cloze_q
         word = q['correct']
         
         # 挖空例句
-        sentence = re.sub(re. escape(word['english']), "_______", word['example'], flags=re.IGNORECASE)
+        sentence = re.sub(re.escape(word['english']), "_______", word['example'], flags=re.IGNORECASE)
         st.markdown(f"### {sentence}")
         st.info(f"💡 提示: {word['chinese']} ({word['pos']})")
         
-        # 使用 form 防止自動提交
-        with st.form(key=f'cloze_form_{st. session_state.question_id}'):
-            choice = st.radio(
-                "請選擇答案：", 
-                q['options'],
-                key=f'cloze_choice_{st.session_state.question_id}'
-            )
-            
+        # 使用 form
+        with st.form(key=f'cloze_form_{st.session_state.cloze_qid}'):
+            choice = st.radio("請選擇答案：", q['options'])
             submitted = st.form_submit_button("✅ 提交答案")
             
             if submitted:
-                st.session_state.submitted = True
-                st.session_state.user_answer = choice
+                st.session_state.cloze_submitted = True
+                st.session_state.cloze_answer = choice
         
-        # 在 form 外顯示結果
-        if st.session_state.submitted:
-            user_choice = st.session_state.user_answer
+        # 顯示結果
+        if st.session_state.cloze_submitted:
+            user_choice = st.session_state.cloze_answer
             
             st.markdown("---")
             st.write(f"**您的答案:** {user_choice}")
             
-            # 判斷對錯
             if user_choice == word['english']:
                 st.success("🎉 **正確！**")
             else:
                 st.error(f"❌ **錯誤！** 正確答案是: **{word['english']}**")
             
-            # 顯示完整單字資訊
             st.markdown("### 📝 單字資訊")
             st.write(f"**• 英文:** {word['english']}")
             st.write(f"**• 詞性:** {word['pos']}")
-            st.write(f"**• 中文:** {word['chinese']}")
+            st. write(f"**• 中文:** {word['chinese']}")
             st.write(f"**• 例句:** {word['example']}")
             
-            # 下一題按鈕
-            if st.button("➡ 下一題", key=f'cloze_next_{st.session_state.question_id}'):
-                reset_question('cloze')
+            if st.button("➡ 下一題", key=f'cloze_next_{st.session_state.cloze_qid}'):
+                st.session_state.cloze_qid += 1
+                st.session_state.cloze_q = None
+                st.session_state. cloze_submitted = False
                 st.rerun()
     
     # ==================== 中翻英測驗 ====================
     with tab2:
         st.subheader("中翻英測驗")
         
-        if st.session_state.quiz_mode != 'c2e':
-            st.session_state.quiz_mode = 'c2e'
-            reset_question('c2e')
+        if st.session_state.c2e_q is None:
+            st.session_state.c2e_q = generate_question('c2e')
+            st. session_state.c2e_submitted = False
         
-        if st.session_state.question is None:
-            reset_question('c2e')
-        
-        q = st.session_state. question
+        q = st.session_state.c2e_q
         word = q['correct']
         
         st.markdown(f"### 中文: **{word['chinese']}**")
         st.write(f"詞性: {word['pos']}")
         
-        with st.form(key=f'c2e_form_{st. session_state.question_id}'):
-            choice = st.radio(
-                "請選擇英文單字：", 
-                q['options'],
-                key=f'c2e_choice_{st.session_state.question_id}'
-            )
-            
+        with st.form(key=f'c2e_form_{st. session_state.c2e_qid}'):
+            choice = st.radio("請選擇英文單字：", q['options'])
             submitted = st.form_submit_button("✅ 提交答案")
             
             if submitted:
-                st.session_state.submitted = True
-                st.session_state.user_answer = choice
+                st.session_state.c2e_submitted = True
+                st.session_state.c2e_answer = choice
         
-        if st.session_state.submitted:
-            user_choice = st. session_state.user_answer
+        if st. session_state.c2e_submitted:
+            user_choice = st. session_state.c2e_answer
             
             st.markdown("---")
             st.write(f"**您的答案:** {user_choice}")
@@ -1400,46 +1386,40 @@ def main():
             
             st.markdown("### 📝 單字資訊")
             st.write(f"**• 英文:** {word['english']}")
-            st. write(f"**• 詞性:** {word['pos']}")
-            st.write(f"**• 中文:** {word['chinese']}")
+            st.write(f"**• 詞性:** {word['pos']}")
+            st. write(f"**• 中文:** {word['chinese']}")
             st.write(f"**• 例句:** {word['example']}")
             
-            if st. button("➡ 下一題", key=f'c2e_next_{st.session_state.question_id}'):
-                reset_question('c2e')
-                st.rerun()
+            if st.button("➡ 下一題", key=f'c2e_next_{st.session_state.c2e_qid}'):
+                st.session_state.c2e_qid += 1
+                st.session_state.c2e_q = None
+                st.session_state.c2e_submitted = False
+                st. rerun()
     
     # ==================== 英翻中測驗 ====================
     with tab3:
-        st.subheader("英翻中測驗")
+        st. subheader("英翻中測驗")
         
-        if st. session_state.quiz_mode != 'e2c':
-            st.session_state.quiz_mode = 'e2c'
-            reset_question('e2c')
+        if st.session_state.e2c_q is None:
+            st.session_state.e2c_q = generate_question('e2c')
+            st.session_state.e2c_submitted = False
         
-        if st.session_state.question is None:
-            reset_question('e2c')
-        
-        q = st.session_state.question
+        q = st.session_state. e2c_q
         word = q['correct']
         
-        st. markdown(f"### 英文: **{word['english']}**")
+        st.markdown(f"### 英文: **{word['english']}**")
         st.write(f"詞性: {word['pos']}")
         
-        with st.form(key=f'e2c_form_{st.session_state.question_id}'):
-            choice = st. radio(
-                "請選擇中文意思：", 
-                q['options'],
-                key=f'e2c_choice_{st.session_state. question_id}'
-            )
-            
+        with st.form(key=f'e2c_form_{st.session_state.e2c_qid}'):
+            choice = st.radio("請選擇中文意思：", q['options'])
             submitted = st.form_submit_button("✅ 提交答案")
             
             if submitted:
-                st.session_state.submitted = True
-                st.session_state. user_answer = choice
+                st.session_state.e2c_submitted = True
+                st.session_state.e2c_answer = choice
         
-        if st.session_state. submitted:
-            user_choice = st.session_state.user_answer
+        if st. session_state.e2c_submitted:
+            user_choice = st.session_state.e2c_answer
             
             st.markdown("---")
             st.write(f"**您的答案:** {user_choice}")
@@ -1450,15 +1430,18 @@ def main():
                 st.error(f"❌ **錯誤！** 正確答案是: **{word['chinese']}**")
             
             st.markdown("### 📝 單字資訊")
-            st. write(f"**• 英文:** {word['english']}")
+            st.write(f"**• 英文:** {word['english']}")
             st.write(f"**• 詞性:** {word['pos']}")
             st.write(f"**• 中文:** {word['chinese']}")
             st.write(f"**• 例句:** {word['example']}")
             
-            if st.button("➡ 下一題", key=f'e2c_next_{st.session_state.question_id}'):
-                reset_question('e2c')
+            if st.button("➡ 下一題", key=f'e2c_next_{st. session_state.e2c_qid}'):
+                st. session_state.e2c_qid += 1
+                st.session_state.e2c_q = None
+                st. session_state.e2c_submitted = False
                 st.rerun()
 
 if __name__ == "__main__":
     main()
+
 
