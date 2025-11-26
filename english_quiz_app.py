@@ -2,7 +2,7 @@ import streamlit as st
 import random
 import pandas as pd
 import re
-import uuid
+# import uuid
 
 # ==========================================
 # 1.  資料庫設定 (您的 138 個單字 + AI 生成的例句)
@@ -1461,3 +1461,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
