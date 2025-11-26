@@ -1459,7 +1459,7 @@ def quiz_chinese_to_english():
         if submit_btn:
             word_info = format_word_info(correct_word)
             if user_choice == correct_word['english']:
-                st.session_state.feedback = f"🎉 **正確！** **{correct_word['english']}** = {correct_word['chinese']}{word_info}"
+                st.session_state.feedback = f"🎉 **正確！** **{correct_word['english']}** = {correct_word['chinese']}。{word_info}"
                 st.session_state.feedback_type = "success"
             else:
                 st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['english']}**。{word_info}"
@@ -1507,7 +1507,7 @@ def quiz_english_to_chinese():
         if submit_btn:
             word_info = format_word_info(correct_word)
             if user_choice == correct_word['chinese']:
-                st.session_state.feedback = f"🎉 **正確！** **{correct_word['english']}** 的意思是 {correct_word['chinese']}{word_info}"
+                st.session_state.feedback = f"🎉 **正確！** **{correct_word['english']}** 的意思是 {correct_word['chinese']}。{word_info}"
                 st.session_state.feedback_type = "success"
             else:
                 st.session_state.feedback = f"❌ **錯誤！** 正確答案是 **{correct_word['chinese']}**。{word_info}"
