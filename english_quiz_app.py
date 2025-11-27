@@ -1316,7 +1316,7 @@ def main():
         # 挖空例句
         sentence = re.sub(re.escape(word['english']), "_______", word['example'], flags=re.IGNORECASE)
         st.markdown(f"### {sentence}")
-        st.info(f"💡 提示: {word['chinese']} ({word['pos']})")
+        # st.info(f"💡 提示: {word['chinese']} ({word['pos']})")
         
         # 使用 form
         with st.form(key=f'cloze_form_{st.session_state.cloze_qid}'):
@@ -1443,5 +1443,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
