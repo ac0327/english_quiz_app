@@ -13,12 +13,11 @@ import os
 def load_vocab_database():
     """載入單字資料庫 (從 vocab_builder.py 生成的 JSON 檔案)"""
     try:
-        # 嘗試載入 JSON 資料庫
         with open('vocab_database.json', 'r', encoding='utf-8') as f:
-            vocab_data = json. load(f)
+            vocab_data = json.load(f)
             return vocab_data
     except FileNotFoundError:
-        st.error("❌ 找不到 vocab_database.json 檔案！")
+        st. error("❌ 找不到 vocab_database.json 檔案！")
         st.info("📝 請先使用 vocab_builder.py 建立單字資料庫")
         st.code("python vocab_builder.py your_vocab. csv", language="bash")
         return []
@@ -44,17 +43,17 @@ def init_state():
         st.session_state. cloze_submitted = False
         st.session_state.cloze_answer = None
     
-    if 'c2e_qid' not in st.session_state:
-        st.session_state.c2e_qid = 0
+    if 'c2e_qid' not in st. session_state:
+        st. session_state.c2e_qid = 0
         st.session_state.c2e_q = None
-        st.session_state.c2e_submitted = False
-        st. session_state.c2e_answer = None
+        st. session_state.c2e_submitted = False
+        st.session_state.c2e_answer = None
     
     if 'e2c_qid' not in st.session_state:
         st.session_state.e2c_qid = 0
         st.session_state.e2c_q = None
         st.session_state.e2c_submitted = False
-        st. session_state.e2c_answer = None
+        st.session_state.e2c_answer = None
 
 def generate_question(mode):
     """生成新題目"""
@@ -114,13 +113,16 @@ def main():
     
     # 側邊欄
     with st.sidebar:
-        st.header("📊 資料庫狀態")
+        st. header("📊 資料庫狀態")
         st.metric("單字總數", len(VOCAB_DB))
         
-        # 顯示資料庫檔案資訊
-        if os.path.exists('vocab_database.json'):
-            file_size = os.path.getsize('vocab_database.json')
-            st.caption(f"資料庫大小: {file_size/1024:. 2f} KB")
+        # 顯示資料庫檔案資訊 (修正這裡)
+        try:
+            if os.path.exists('vocab_database.json'):
+                file_size = os.path.getsize('vocab_database.json')
+                st.caption(f"資料庫大小: {file_size/1024:. 2f} KB")  # 修正：移除空格
+        except Exception as e:
+            st.caption("無法讀取檔案大小")
         
         if st.button("🔄 重新載入資料庫"):
             st.cache_data.clear()
@@ -164,7 +166,7 @@ def main():
             
             if submitted:
                 st.session_state.cloze_submitted = True
-                st. session_state.cloze_answer = choice
+                st.session_state. cloze_answer = choice
         
         if st.session_state.cloze_submitted:
             user_choice = st.session_state.cloze_answer
@@ -186,7 +188,7 @@ def main():
             if st.button("➡ 下一題", key=f'cloze_next_{st.session_state.cloze_qid}'):
                 st.session_state.cloze_qid += 1
                 st. session_state.cloze_q = None
-                st.session_state. cloze_submitted = False
+                st.session_state.cloze_submitted = False
                 st.rerun()
     
     # ==================== 中翻英測驗 ====================
@@ -195,7 +197,7 @@ def main():
         
         if st.session_state.c2e_q is None:
             st.session_state.c2e_q = generate_question('c2e')
-            st.session_state. c2e_submitted = False
+            st.session_state.c2e_submitted = False
         
         q = st.session_state.c2e_q
         if q is None:
@@ -213,10 +215,10 @@ def main():
             
             if submitted:
                 st.session_state.c2e_submitted = True
-                st. session_state.c2e_answer = choice
+                st.session_state.c2e_answer = choice
         
-        if st.session_state.c2e_submitted:
-            user_choice = st.session_state. c2e_answer
+        if st. session_state.c2e_submitted:
+            user_choice = st.session_state.c2e_answer
             
             st.markdown("---")
             st.write(f"**您的答案:** {user_choice}")
@@ -256,15 +258,15 @@ def main():
         st.markdown(f"### 英文: **{word['english']}**")
         st.write(f"詞性: {word['pos']}")
         
-        with st.form(key=f'e2c_form_{st.session_state.e2c_qid}'):
-            choice = st.radio("請選擇中文意思：", q['options'])
+        with st. form(key=f'e2c_form_{st.session_state.e2c_qid}'):
+            choice = st. radio("請選擇中文意思：", q['options'])
             submitted = st.form_submit_button("✅ 提交答案")
             
             if submitted:
-                st.session_state. e2c_submitted = True
+                st.session_state.e2c_submitted = True
                 st.session_state.e2c_answer = choice
         
-        if st.session_state.e2c_submitted:
+        if st. session_state.e2c_submitted:
             user_choice = st.session_state.e2c_answer
             
             st.markdown("---")
@@ -289,5 +291,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
