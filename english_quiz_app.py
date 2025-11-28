@@ -157,7 +157,6 @@ def main():
         
         # 挖空例句
         sentence = re.sub(re.escape(word['english']), "_______", word['example'], flags=re.IGNORECASE)
-        sentence = remove_chinese_from_text(sentence)
         st.markdown(f"### {sentence}")
         # st.info(f"💡 提示: {word['chinese']} ({word['pos']})")
         
@@ -292,6 +291,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
