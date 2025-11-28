@@ -17,7 +17,7 @@ def load_vocab_database():
             vocab_data = json.load(f)
             return vocab_data
     except FileNotFoundError:
-        st. error("❌ 找不到 vocab_database.json 檔案！")
+        st.error("❌ 找不到 vocab_database.json 檔案！")
         st.info("📝 請先使用 vocab_builder.py 建立單字資料庫")
         st.code("python vocab_builder.py your_vocab. csv", language="bash")
         return []
@@ -34,6 +34,32 @@ VOCAB_DB = load_vocab_database()
 # ==========================================
 # 2. 核心邏輯函式
 # ==========================================
+
+def remove_chinese_from_text(text):
+    """
+    移除文字中括號內的中文
+    包含：(中文)、（中文）、[中文]、【中文】
+    """
+    if not text:
+        return text
+    
+    # 移除各種括號內的中文
+    # 圓括號 ()
+    text = re.sub(r'\([^)]*[\u4e00-\u9fff][^)]*\)', '', text)
+    # 全形圓括號 （）
+    text = re.sub(r'（[^）]*[\u4e00-\u9fff][^）]*）', '', text)
+    # 方括號 []
+    text = re.sub(r'\[[^\]]*[\u4e00-\u9fff][^\]]*\]', '', text)
+    # 全形方括號 【】
+    text = re.sub(r'【[^】]*[\u4e00-\u9fff][^】]*】', '', text)
+    
+    # 移除單獨的中文字符（如果有的話）
+    # text = re.sub(r'[\u4e00-\u9fff]+', '', text)  # 如果需要移除所有中文，取消註解這行
+    
+    # 清理多餘空格
+    text = re.sub(r'\s+', ' ', text).strip()
+    
+    return text
 
 def init_state():
     """初始化 session state"""
@@ -53,7 +79,7 @@ def init_state():
         st.session_state.e2c_qid = 0
         st.session_state.e2c_q = None
         st.session_state.e2c_submitted = False
-        st.session_state.e2c_answer = None
+        st. session_state.e2c_answer = None
 
 def generate_question(mode):
     """生成新題目"""
@@ -102,7 +128,7 @@ def main():
             
             ### 步驟 2: 執行建立工具
             ```bash
-            python vocab_builder.py your_vocab.csv
+            python vocab_builder. py your_vocab.csv
             ```
             
             ### 步驟 3: 重新整理此頁面
@@ -116,12 +142,12 @@ def main():
         st. header("📊 資料庫狀態")
         st.metric("單字總數", len(VOCAB_DB))
         
-        # 顯示資料庫檔案資訊 (修正這裡)
+        # 顯示資料庫檔案資訊
         try:
-            if os.path.exists('vocab_database.json'):
+            if os.path. exists('vocab_database.json'):
                 file_size = os.path.getsize('vocab_database.json')
-                st.caption(f"資料庫大小: {file_size/1024:. 2f} KB")  # 修正：移除空格
-        except Exception as e:
+                st.caption(f"資料庫大小: {file_size/1024:. 2f} KB")
+        except Exception:
             st.caption("無法讀取檔案大小")
         
         if st.button("🔄 重新載入資料庫"):
@@ -155,10 +181,12 @@ def main():
         
         word = q['correct']
         
-        # 挖空例句
-        sentence = re.sub(re.escape(word['english']), "_______", word['example'], flags=re.IGNORECASE)
+        # 先移除中文，再挖空
+        clean_example = remove_chinese_from_text(word['example'])
+        sentence = re.sub(re.escape(word['english']), "_______", clean_example, flags=re. IGNORECASE)
+        
         st.markdown(f"### {sentence}")
-        # st.info(f"💡 提示: {word['chinese']} ({word['pos']})")
+        st.info(f"💡 提示: {word['chinese']} ({word['pos']})")
         
         with st.form(key=f'cloze_form_{st.session_state.cloze_qid}'):
             choice = st.radio("請選擇答案：", q['options'])
@@ -166,7 +194,7 @@ def main():
             
             if submitted:
                 st.session_state.cloze_submitted = True
-                st.session_state. cloze_answer = choice
+                st.session_state.cloze_answer = choice
         
         if st.session_state.cloze_submitted:
             user_choice = st.session_state.cloze_answer
@@ -183,12 +211,12 @@ def main():
             st.write(f"**• 英文:** {word['english']}")
             st.write(f"**• 詞性:** {word['pos']}")
             st.write(f"**• 中文:** {word['chinese']}")
-            st.write(f"**• 例句:** {word['example']}")
+            st.write(f"**• 例句:** {clean_example}")
             
             if st.button("➡ 下一題", key=f'cloze_next_{st.session_state.cloze_qid}'):
                 st.session_state.cloze_qid += 1
                 st. session_state.cloze_q = None
-                st.session_state.cloze_submitted = False
+                st.session_state. cloze_submitted = False
                 st.rerun()
     
     # ==================== 中翻英測驗 ====================
@@ -197,7 +225,7 @@ def main():
         
         if st.session_state.c2e_q is None:
             st.session_state.c2e_q = generate_question('c2e')
-            st.session_state.c2e_submitted = False
+            st.session_state. c2e_submitted = False
         
         q = st.session_state.c2e_q
         if q is None:
@@ -232,12 +260,14 @@ def main():
             st.write(f"**• 英文:** {word['english']}")
             st.write(f"**• 詞性:** {word['pos']}")
             st.write(f"**• 中文:** {word['chinese']}")
-            st.write(f"**• 例句:** {word['example']}")
             
-            if st.button("➡ 下一題", key=f'c2e_next_{st. session_state.c2e_qid}'):
-                st. session_state.c2e_qid += 1
+            clean_example = remove_chinese_from_text(word['example'])
+            st.write(f"**• 例句:** {clean_example}")
+            
+            if st.button("➡ 下一題", key=f'c2e_next_{st.session_state.c2e_qid}'):
+                st.session_state.c2e_qid += 1
                 st.session_state.c2e_q = None
-                st. session_state.c2e_submitted = False
+                st.session_state.c2e_submitted = False
                 st.rerun()
     
     # ==================== 英翻中測驗 ====================
@@ -246,9 +276,9 @@ def main():
         
         if st.session_state.e2c_q is None:
             st.session_state.e2c_q = generate_question('e2c')
-            st. session_state.e2c_submitted = False
+            st.session_state.e2c_submitted = False
         
-        q = st.session_state.e2c_q
+        q = st. session_state.e2c_q
         if q is None:
             st.error("無法生成題目，請檢查資料庫。")
             return
@@ -258,8 +288,8 @@ def main():
         st.markdown(f"### 英文: **{word['english']}**")
         st.write(f"詞性: {word['pos']}")
         
-        with st. form(key=f'e2c_form_{st.session_state.e2c_qid}'):
-            choice = st. radio("請選擇中文意思：", q['options'])
+        with st.form(key=f'e2c_form_{st.session_state.e2c_qid}'):
+            choice = st.radio("請選擇中文意思：", q['options'])
             submitted = st.form_submit_button("✅ 提交答案")
             
             if submitted:
@@ -281,16 +311,19 @@ def main():
             st.write(f"**• 英文:** {word['english']}")
             st.write(f"**• 詞性:** {word['pos']}")
             st.write(f"**• 中文:** {word['chinese']}")
-            st.write(f"**• 例句:** {word['example']}")
             
-            if st.button("➡ 下一題", key=f'e2c_next_{st. session_state.e2c_qid}'):
-                st. session_state.e2c_qid += 1
-                st.session_state.e2c_q = None
-                st. session_state.e2c_submitted = False
+            clean_example = remove_chinese_from_text(word['example'])
+            st.write(f"**• 例句:** {clean_example}")
+            
+            if st.button("➡ 下一題", key=f'e2c_next_{st.session_state.e2c_qid}'):
+                st.session_state.e2c_qid += 1
+                st. session_state.e2c_q = None
+                st.session_state.e2c_submitted = False
                 st.rerun()
 
 if __name__ == "__main__":
     main()
+
 
 
 
