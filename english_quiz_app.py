@@ -17,8 +17,8 @@ def load_vocab_database():
             vocab_data = json.load(f)
             return vocab_data
     except FileNotFoundError:
-        st.error("❌ 找不到 vocab_database.json 檔案！")
-        st.info("📝 請先使用 vocab_builder.py 建立單字資料庫")
+        st. error("❌ 找不到 vocab_database.json 檔案！")
+        st. info("📝 請先使用 vocab_builder.py 建立單字資料庫")
         st.code("python vocab_builder.py your_vocab. csv", language="bash")
         return []
     except json.JSONDecodeError:
@@ -90,27 +90,21 @@ def find_similar_words(target_word, word_list, min_common_chars=3, max_results=3
     return [item['word'] for item in similar_words[:max_results]]
 
 def generate_confusing_question_set():
-    """
-    生成一組易混淆單字，並為每個單字準備考題
-    返回: 包含多個題目的列表
-    """
+    """生成一組易混淆單字，並為每個單字準備考題"""
     if not VOCAB_DB or len(VOCAB_DB) < 10:
         return None
     
-    # 嘗試找到有相似單字的組合
     max_attempts = 50
     for _ in range(max_attempts):
         target_word = random.choice(VOCAB_DB)
         similar_words = find_similar_words(target_word, VOCAB_DB, min_common_chars=3, max_results=3)
         
         if len(similar_words) >= 2:
-            # 所有相似單字（包含目標單字）
             all_words = [target_word] + similar_words
             
             # 為每個單字生成一題
             questions = []
             for word in all_words:
-                # 其他單字作為選項
                 other_words = [w for w in all_words if w['english'] != word['english']]
                 options = [w['chinese'] for w in other_words] + [word['chinese']]
                 random.shuffle(options)
@@ -134,7 +128,7 @@ def init_state():
     if 'cloze_qid' not in st.session_state:
         st.session_state.cloze_qid = 0
         st.session_state.cloze_q = None
-        st.session_state. cloze_submitted = False
+        st.session_state.cloze_submitted = False
         st.session_state.cloze_answer = None
     
     if 'c2e_qid' not in st. session_state:
@@ -147,7 +141,7 @@ def init_state():
         st.session_state.e2c_qid = 0
         st.session_state.e2c_q = None
         st.session_state.e2c_submitted = False
-        st. session_state.e2c_answer = None
+        st.session_state.e2c_answer = None
     
     if 'match_qid' not in st. session_state:
         st. session_state.match_qid = 0
@@ -155,11 +149,10 @@ def init_state():
         st.session_state. match_submitted = False
         st.session_state.match_answers = {}
     
-    # 易混淆題的狀態（改為題組）
-    if 'confuse_qid' not in st. session_state:
-        st. session_state.confuse_qid = 0
-        st. session_state.confuse_q_set = None  # 整組題目
-        st.session_state. confuse_submitted = False
+    if 'confuse_qid' not in st.session_state:
+        st.session_state.confuse_qid = 0
+        st.session_state.confuse_q_set = None
+        st.session_state.confuse_submitted = False
         st.session_state.confuse_answer = None
 
 def generate_question(mode):
@@ -208,13 +201,13 @@ def main():
         with st.expander("📖 如何建立資料庫？", expanded=True):
             st. markdown("""
             ### 步驟 1: 準備 CSV 檔案
-            ### 步驟 2: 執行建立工具
+            ### 步驟 2: 執行建立工具  
             ### 步驟 3: 重新整理此頁面
             """)
         st.stop()
     
     with st.sidebar:
-        st.header("📊 資料庫狀態")
+        st. header("📊 資料庫狀態")
         st.metric("單字總數", len(VOCAB_DB))
         
         try:
@@ -252,17 +245,15 @@ def main():
         
         q = st.session_state.cloze_q
         if q is None:
-            st.error("無法生成題目，請檢查資料庫。")
+            st. error("無法生成題目，請檢查資料庫。")
             return
         
         word = q['correct']
-        
-        # 先移除中文，再挖空
         clean_example = remove_chinese_from_text(word['example'])
         sentence = re.sub(re.escape(word['english']), "_______", clean_example, flags=re.IGNORECASE)
         
         st.markdown(f"### {sentence}")
-        # st.info(f"💡 提示: {word['chinese']} ({word['pos']})")
+        st.info(f"💡 提示: {word['chinese']} ({word['pos']})")
         
         with st.form(key=f'cloze_form_{st.session_state.cloze_qid}'):
             choice = st.radio("請選擇答案：", q['options'])
@@ -292,7 +283,7 @@ def main():
             if st.button("➡ 下一題", key=f'cloze_next_{st.session_state.cloze_qid}'):
                 st.session_state.cloze_qid += 1
                 st. session_state.cloze_q = None
-                st.session_state. cloze_submitted = False
+                st.session_state.cloze_submitted = False
                 st.rerun()
     
     # ==================== 中翻英測驗 ====================
@@ -303,9 +294,9 @@ def main():
             st.session_state.c2e_q = generate_question('c2e')
             st.session_state.c2e_submitted = False
         
-        q = st.session_state. c2e_q
+        q = st.session_state.c2e_q
         if q is None:
-            st. error("無法生成題目，請檢查資料庫。")
+            st.error("無法生成題目，請檢查資料庫。")
             return
         
         word = q['correct']
@@ -342,7 +333,7 @@ def main():
             
             if st.button("➡ 下一題", key=f'c2e_next_{st.session_state.c2e_qid}'):
                 st.session_state.c2e_qid += 1
-                st.session_state.c2e_q = None
+                st. session_state.c2e_q = None
                 st.session_state.c2e_submitted = False
                 st.rerun()
     
@@ -354,7 +345,7 @@ def main():
             st.session_state.e2c_q = generate_question('e2c')
             st.session_state.e2c_submitted = False
         
-        q = st. session_state.e2c_q
+        q = st.session_state.e2c_q
         if q is None:
             st.error("無法生成題目，請檢查資料庫。")
             return
@@ -362,7 +353,7 @@ def main():
         word = q['correct']
         
         st.markdown(f"### 英文: **{word['english']}**")
-        st. write(f"詞性: {word['pos']}")
+        st.write(f"詞性: {word['pos']}")
         
         with st.form(key=f'e2c_form_{st.session_state.e2c_qid}'):
             choice = st.radio("請選擇中文意思：", q['options'])
@@ -402,41 +393,36 @@ def main():
         st.subheader("🔗 英中配對題")
         st.caption("請將左側的英文單字與右側的中文意思配對")
         
-        # 檢查資料庫數量
         if len(VOCAB_DB) < 10:
             st.warning(f"⚠️ 資料庫只有 {len(VOCAB_DB)} 個單字，需要至少 10 個才能進行配對題。")
             return
         
-        # 生成題目
         if st.session_state.match_q is None:
             st. session_state.match_q = generate_matching_question(10)
             st.session_state. match_submitted = False
             st.session_state.match_answers = {}
         
-        q = st. session_state.match_q
+        q = st.session_state.match_q
         if q is None:
             st.error("無法生成題目，請檢查資料庫。")
             return
         
-        # 使用表單
-        with st.form(key=f'match_form_{st. session_state.match_qid}'):
-            # 建立兩列布局
-            col1, col2 = st.columns([1, 1])
+        with st.form(key=f'match_form_{st.session_state.match_qid}'):
+            col1, col2 = st. columns([1, 1])
             
             with col1:
-                st.markdown("### 📝 英文單字")
+                st. markdown("### 📝 英文單字")
                 for num, eng, word_data in q['english_list']:
                     st.markdown(f"**{num}. ** {eng}")
             
             with col2:
                 st.markdown("### 🎯 選擇中文意思")
                 
-                # 為每個英文單字建立下拉選單
                 user_answers = {}
                 for num, eng, word_data in q['english_list']:
                     options = ['請選擇... '] + q['chinese_list']
                     selected = st.selectbox(
-                        f"{num}. {eng}",
+                        f"{num}.  {eng}",
                         options,
                         key=f'match_{num}_{st.session_state.match_qid}'
                     )
@@ -445,14 +431,12 @@ def main():
             submitted = st.form_submit_button("✅ 提交答案")
             
             if submitted:
-                # 檢查是否所有題目都已作答
                 if '請選擇.. .' in user_answers. values():
                     st.warning("⚠️ 請完成所有配對！")
                 else:
                     st.session_state.match_submitted = True
                     st.session_state. match_answers = user_answers
         
-        # 顯示結果
         if st.session_state.match_submitted:
             st.markdown("---")
             st.markdown("## 📊 答題結果")
@@ -460,7 +444,6 @@ def main():
             correct_count = 0
             total_count = len(q['correct_answers'])
             
-            # 顯示每題的結果
             for num, eng, word_data in q['english_list']:
                 user_ans = st.session_state.match_answers.get(eng, '')
                 correct_ans = q['correct_answers'][eng]
@@ -471,7 +454,6 @@ def main():
                 else:
                     st.error(f"❌ **{num}. {eng}** → 您的答案: {user_ans} | 正確答案: {correct_ans}")
             
-            # 顯示分數
             score = (correct_count / total_count) * 100
             st.markdown("---")
             
@@ -485,7 +467,6 @@ def main():
             else:
                 st.info(f"📚 **繼續加油！** 您答對了 {correct_count}/{total_count} 題 ({score:. 0f}%)")
             
-            # 下一題按鈕
             if st.button("➡ 下一組配對題", key=f'match_next_{st.session_state.match_qid}'):
                 st.session_state.match_qid += 1
                 st. session_state.match_q = None
@@ -493,33 +474,35 @@ def main():
                 st.session_state.match_answers = {}
                 st.rerun()
     
-   # ==================== 易混淆單字測驗（改進版）====================
+    # ==================== 易混淆單字測驗 ====================
     with tab5:
         st.subheader("⚠️ 易混淆單字測驗")
         st.caption("這些單字拼法相似，每個都會出題測試！")
         
-        # 生成題組
-        if st.session_state.confuse_q_set is None:
+        if st. session_state.confuse_q_set is None:
             st.session_state.confuse_q_set = generate_confusing_question_set()
             st.session_state.confuse_submitted = False
         
-        q_set = st.session_state.confuse_q_set
+        q_set = st.session_state. confuse_q_set
         
         if q_set is None:
             st.warning("⚠️ 資料庫中找不到足夠的相似單字。")
+            with st.expander("💡 什麼是易混淆單字？"):
+                st.markdown("""
+                易混淆單字是指拼法相似、容易搞混的單字，例如：
+                - **over**view, **over**look, **over**see
+                - **app**lication, **app**eal, **app**ear
+                """)
             return
         
-        # 獲取當前題目
         current_q = q_set['questions'][q_set['current_index']]
         target = current_q['target']
         all_words = current_q['all_words']
         total_questions = len(q_set['questions'])
         
-        # 顯示進度
         st.progress((q_set['current_index'] + 1) / total_questions)
         st.caption(f"題目 {q_set['current_index'] + 1} / {total_questions}")
         
-        # 顯示所有易混淆的單字
         st.markdown("### 🎯 請選出以下單字的正確中文意思：")
         
         cols = st.columns(len(all_words))
@@ -533,19 +516,18 @@ def main():
         st.markdown("---")
         st.markdown(f"### 📝 題目 {q_set['current_index'] + 1}: 請選擇 **{target['english']}** 的中文意思")
         
-        with st.form(key=f'confuse_form_{st.session_state.confuse_qid}_{q_set["current_index"]}'):
-            choice = st.radio(
+        with st.form(key=f'confuse_form_{st. session_state.confuse_qid}_{q_set["current_index"]}'):
+            choice = st. radio(
                 f"**{target['english']}** 的意思是？",
                 current_q['options'],
-                key=f'confuse_radio_{st.session_state.confuse_qid}_{q_set["current_index"]}'
+                key=f'confuse_radio_{st.session_state. confuse_qid}_{q_set["current_index"]}'
             )
             submitted = st.form_submit_button("✅ 提交答案")
             
             if submitted:
-                st.session_state.confuse_submitted = True
+                st.session_state. confuse_submitted = True
                 st.session_state.confuse_answer = choice
         
-        # 顯示結果
         if st.session_state.confuse_submitted:
             user_choice = st.session_state.confuse_answer
             
@@ -557,13 +539,11 @@ def main():
             else:
                 st.error(f"❌ **錯誤！** 正確答案是: **{target['chinese']}**")
             
-            # 顯示當前單字資訊
             st.markdown("### 📝 單字資訊")
             with st.expander(f"**{target['english']}** = {target['chinese']} ({target['pos']})", expanded=True):
                 clean_example = remove_chinese_from_text(target['example'])
                 st.write(f"**例句:** {clean_example}")
             
-            # 下一題按鈕
             if q_set['current_index'] < total_questions - 1:
                 if st.button("➡ 下一題", key=f'confuse_next_{q_set["current_index"]}'):
                     q_set['current_index'] += 1
@@ -573,7 +553,6 @@ def main():
             else:
                 st.success("🎊 **恭喜！您已完成這組易混淆單字測驗！**")
                 
-                # 顯示所有單字辨析
                 st.markdown("---")
                 st.markdown("### 📚 易混淆單字總複習")
                 for word in all_words:
@@ -584,13 +563,12 @@ def main():
                 if st.button("🔄 開始新的一組", key='confuse_restart'):
                     st.session_state.confuse_qid += 1
                     st.session_state.confuse_q_set = None
-                    st.session_state.confuse_submitted = False
-                    st.session_state. confuse_answer = None
+                    st. session_state.confuse_submitted = False
+                    st.session_state.confuse_answer = None
                     st.rerun()
 
 if __name__ == "__main__":
     main()
-
 
 
 
