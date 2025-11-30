@@ -534,60 +534,56 @@ def main():
                 st.session_state.match_answers = {}
                 st.rerun()
     
-    # ==================== 易混淆單字測驗 ====================
+   # ==================== 易混淆單字測驗（改進版）====================
     with tab5:
         st.subheader("⚠️ 易混淆單字測驗")
-        st.caption("這些單字拼法相似，請仔細分辨它們的意思！")
+        st.caption("這些單字拼法相似，每個都會出題測試！")
         
-        # 生成題目
-        if st. session_state.confuse_q is None:
-            st.session_state.confuse_q = generate_confusing_question()
+        # 生成題組
+        if st.session_state.confuse_q_set is None:
+            st.session_state.confuse_q_set = generate_confusing_question_set()
             st.session_state.confuse_submitted = False
         
-        q = st.session_state.confuse_q
+        q_set = st.session_state.confuse_q_set
         
-        if q is None:
-            st.warning("⚠️ 資料庫中找不到足夠的相似單字。建議至少需要一些相似的單字組（例如：overview, overlook, oversee）。")
-            
-            with st.expander("💡 什麼是易混淆單字？"):
-                st.markdown("""
-                易混淆單字是指拼法相似、容易搞混的單字，例如：
-                - **over**view, **over**look, **over**see (共同前綴)
-                - **app**lication, **app**eal, **app**ear
-                - ad**vise**, ad**vice**, re**vise**
-                
-                這個題型會自動找出您單字庫中相似的單字來出題！
-                """)
+        if q_set is None:
+            st.warning("⚠️ 資料庫中找不到足夠的相似單字。")
             return
         
-        target = q['target']
-        all_words = q['all_words']
+        # 獲取當前題目
+        current_q = q_set['questions'][q_set['current_index']]
+        target = current_q['target']
+        all_words = current_q['all_words']
+        total_questions = len(q_set['questions'])
+        
+        # 顯示進度
+        st.progress((q_set['current_index'] + 1) / total_questions)
+        st.caption(f"題目 {q_set['current_index'] + 1} / {total_questions}")
         
         # 顯示所有易混淆的單字
         st.markdown("### 🎯 請選出以下單字的正確中文意思：")
         
-        # 用醒目的方式顯示單字
         cols = st.columns(len(all_words))
         for idx, word in enumerate(all_words):
             with cols[idx]:
                 if word == target:
-                    st. markdown(f"### 🔹 **{word['english']}**")
+                    st.markdown(f"### 🔹 **{word['english']}**")
                 else:
                     st.markdown(f"### {word['english']}")
         
         st.markdown("---")
-        st.markdown(f"### 請選擇 **{target['english']}** 的中文意思：")
+        st.markdown(f"### 📝 題目 {q_set['current_index'] + 1}: 請選擇 **{target['english']}** 的中文意思")
         
-        with st.form(key=f'confuse_form_{st.session_state.confuse_qid}'):
-            choice = st. radio(
+        with st.form(key=f'confuse_form_{st.session_state.confuse_qid}_{q_set["current_index"]}'):
+            choice = st.radio(
                 f"**{target['english']}** 的意思是？",
-                q['options'],
-                key=f'confuse_radio_{st.session_state.confuse_qid}'
+                current_q['options'],
+                key=f'confuse_radio_{st.session_state.confuse_qid}_{q_set["current_index"]}'
             )
             submitted = st.form_submit_button("✅ 提交答案")
             
             if submitted:
-                st. session_state.confuse_submitted = True
+                st.session_state.confuse_submitted = True
                 st.session_state.confuse_answer = choice
         
         # 顯示結果
@@ -598,35 +594,44 @@ def main():
             st.write(f"**您的答案:** {user_choice}")
             
             if user_choice == target['chinese']:
-                st.success("🎉 **正確！** 您成功分辨出易混淆單字！")
+                st.success("🎉 **正確！**")
             else:
                 st.error(f"❌ **錯誤！** 正確答案是: **{target['chinese']}**")
             
-            # 顯示所有相似單字的完整資訊
-            st.markdown("---")
-            st.markdown("### 📝 易混淆單字辨析")
-            
-            for word in all_words:
-                with st.expander(f"{'🎯 ' if word == target else ''}**{word['english']}** = {word['chinese']} ({word['pos']})"):
-                    clean_example = remove_chinese_from_text(word['example'])
-                    st.write(f"**例句:** {clean_example}")
-                    
-                    # # 標示相同的部分
-                    # if word != target:
-                    #     common = get_common_prefix_length(target['english'], word['english'])
-                        # if common > 0:
-                        #     st. caption(f"💡 與 {target['english']} 有 {common} 個字母相同")
+            # 顯示當前單字資訊
+            st.markdown("### 📝 單字資訊")
+            with st.expander(f"**{target['english']}** = {target['chinese']} ({target['pos']})", expanded=True):
+                clean_example = remove_chinese_from_text(target['example'])
+                st.write(f"**例句:** {clean_example}")
             
             # 下一題按鈕
-            if st.button("➡ 下一組易混淆單字", key=f'confuse_next_{st. session_state.confuse_qid}'):
-                st.session_state.confuse_qid += 1
-                st.session_state.confuse_q = None
-                st.session_state.confuse_submitted = False
-                st.session_state.confuse_answer = None
-                st.rerun()
+            if q_set['current_index'] < total_questions - 1:
+                if st.button("➡ 下一題", key=f'confuse_next_{q_set["current_index"]}'):
+                    q_set['current_index'] += 1
+                    st.session_state.confuse_submitted = False
+                    st.session_state.confuse_answer = None
+                    st.rerun()
+            else:
+                st.success("🎊 **恭喜！您已完成這組易混淆單字測驗！**")
+                
+                # 顯示所有單字辨析
+                st.markdown("---")
+                st.markdown("### 📚 易混淆單字總複習")
+                for word in all_words:
+                    with st.expander(f"**{word['english']}** = {word['chinese']} ({word['pos']})"):
+                        clean_example = remove_chinese_from_text(word['example'])
+                        st.write(f"**例句:** {clean_example}")
+                
+                if st.button("🔄 開始新的一組", key='confuse_restart'):
+                    st.session_state.confuse_qid += 1
+                    st.session_state.confuse_q_set = None
+                    st.session_state.confuse_submitted = False
+                    st.session_state. confuse_answer = None
+                    st.rerun()
 
 if __name__ == "__main__":
     main()
+
 
 
 
