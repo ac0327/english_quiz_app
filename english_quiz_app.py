@@ -4,7 +4,6 @@ import pandas as pd
 import re
 import json
 import os
-from difflib import SequenceMatcher
 
 # ==========================================
 # 1. 載入單字資料庫
@@ -19,7 +18,7 @@ def load_vocab_database():
             return vocab_data
     except FileNotFoundError:
         st.error("❌ 找不到 vocab_database.json 檔案！")
-        st. info("📝 請先使用 vocab_builder.py 建立單字資料庫")
+        st.info("📝 請先使用 vocab_builder.py 建立單字資料庫")
         st.code("python vocab_builder.py your_vocab. csv", language="bash")
         return []
     except json.JSONDecodeError:
@@ -37,20 +36,14 @@ VOCAB_DB = load_vocab_database()
 # ==========================================
 
 def remove_chinese_from_text(text):
-    """
-    移除文字中括號內的中文
-    包含：(中文)、（中文）、[中文]、【中文】
-    """
+    """移除文字中括號內的中文"""
     if not text:
         return text
     
-    # 移除各種括號內的中文
     text = re.sub(r'\([^)]*[\u4e00-\u9fff][^)]*\)', '', text)
     text = re.sub(r'（[^）]*[\u4e00-\u9fff][^）]*）', '', text)
     text = re.sub(r'\[[^\]]*[\u4e00-\u9fff][^\]]*\]', '', text)
     text = re.sub(r'【[^】]*[\u4e00-\u9fff][^】]*】', '', text)
-    
-    # 清理多餘空格
     text = re.sub(r'\s+', ' ', text). strip()
     
     return text
@@ -59,20 +52,12 @@ def get_common_prefix_length(word1, word2):
     """計算兩個單字的共同前綴長度"""
     min_len = min(len(word1), len(word2))
     for i in range(min_len):
-        if word1[i]. lower() != word2[i]. lower():
+        if word1[i]. lower() != word2[i].lower():
             return i
     return min_len
 
 def find_similar_words(target_word, word_list, min_common_chars=3, max_results=3):
-    """
-    找出與目標單字相似的單字（共同字符>=3）
-    
-    參數:
-        target_word: 目標單字
-        word_list: 所有單字列表
-        min_common_chars: 最少共同字符數
-        max_results: 最多返回幾個相似單字
-    """
+    """找出與目標單字相似的單字"""
     similar_words = []
     target_lower = target_word['english'].lower()
     
@@ -82,10 +67,10 @@ def find_similar_words(target_word, word_list, min_common_chars=3, max_results=3
         
         word_lower = word['english'].lower()
         
-        # 方法1: 檢查共同前綴
+        # 檢查共同前綴
         common_prefix = get_common_prefix_length(target_lower, word_lower)
         
-        # 方法2: 檢查是否包含相同的子字串
+        # 檢查共同子字串
         common_substring = 0
         for i in range(len(target_lower)):
             for j in range(i + min_common_chars, len(target_lower) + 1):
@@ -93,7 +78,6 @@ def find_similar_words(target_word, word_list, min_common_chars=3, max_results=3
                 if substring in word_lower and len(substring) > common_substring:
                     common_substring = len(substring)
         
-        # 如果共同前綴或共同子字串 >= 指定長度，視為相似
         max_common = max(common_prefix, common_substring)
         
         if max_common >= min_common_chars:
@@ -102,38 +86,47 @@ def find_similar_words(target_word, word_list, min_common_chars=3, max_results=3
                 'similarity': max_common
             })
     
-    # 按相似度排序，取前N個
     similar_words.sort(key=lambda x: x['similarity'], reverse=True)
     return [item['word'] for item in similar_words[:max_results]]
 
-def generate_confusing_question():
-    """生成易混淆單字題目"""
+def generate_confusing_question_set():
+    """
+    生成一組易混淆單字，並為每個單字準備考題
+    返回: 包含多個題目的列表
+    """
     if not VOCAB_DB or len(VOCAB_DB) < 10:
         return None
     
-    # 嘗試最多50次找到有相似單字的目標
+    # 嘗試找到有相似單字的組合
     max_attempts = 50
     for _ in range(max_attempts):
-        target_word = random. choice(VOCAB_DB)
+        target_word = random.choice(VOCAB_DB)
         similar_words = find_similar_words(target_word, VOCAB_DB, min_common_chars=3, max_results=3)
         
-        # 如果找到至少2個相似單字
         if len(similar_words) >= 2:
-            # 組合題目選項（目標單字 + 相似單字）
-            question_words = [target_word] + similar_words
+            # 所有相似單字（包含目標單字）
+            all_words = [target_word] + similar_words
             
-            # 準備選項
-            options = [w['chinese'] for w in question_words]
-            random.shuffle(options)
+            # 為每個單字生成一題
+            questions = []
+            for word in all_words:
+                # 其他單字作為選項
+                other_words = [w for w in all_words if w['english'] != word['english']]
+                options = [w['chinese'] for w in other_words] + [word['chinese']]
+                random.shuffle(options)
+                
+                questions.append({
+                    'target': word,
+                    'all_words': all_words,
+                    'options': options
+                })
             
             return {
-                'target': target_word,
-                'similar_words': similar_words,
-                'all_words': question_words,
-                'options': options
+                'questions': questions,
+                'current_index': 0,
+                'all_words': all_words
             }
     
-    # 如果找不到，返回None
     return None
 
 def init_state():
@@ -141,7 +134,7 @@ def init_state():
     if 'cloze_qid' not in st.session_state:
         st.session_state.cloze_qid = 0
         st.session_state.cloze_q = None
-        st.session_state.cloze_submitted = False
+        st.session_state. cloze_submitted = False
         st.session_state.cloze_answer = None
     
     if 'c2e_qid' not in st. session_state:
@@ -154,21 +147,20 @@ def init_state():
         st.session_state.e2c_qid = 0
         st.session_state.e2c_q = None
         st.session_state.e2c_submitted = False
-        st.session_state.e2c_answer = None
+        st. session_state.e2c_answer = None
     
-    # 配對題的狀態
     if 'match_qid' not in st. session_state:
         st. session_state.match_qid = 0
         st.session_state.match_q = None
         st.session_state. match_submitted = False
         st.session_state.match_answers = {}
     
-    # 易混淆題的狀態
+    # 易混淆題的狀態（改為題組）
     if 'confuse_qid' not in st. session_state:
         st. session_state.confuse_qid = 0
-        st. session_state.confuse_q = None
-        st.session_state.confuse_submitted = False
-        st.session_state. confuse_answer = None
+        st. session_state.confuse_q_set = None  # 整組題目
+        st.session_state. confuse_submitted = False
+        st.session_state.confuse_answer = None
 
 def generate_question(mode):
     """生成新題目"""
@@ -181,7 +173,7 @@ def generate_question(mode):
     
     if mode in ['cloze', 'c2e']:
         options = [d['english'] for d in distractors] + [correct['english']]
-    else:  # e2c
+    else:
         options = [d['chinese'] for d in distractors] + [correct['chinese']]
     
     random.shuffle(options)
@@ -192,14 +184,9 @@ def generate_matching_question(count=10):
     if not VOCAB_DB or len(VOCAB_DB) < count:
         return None
     
-    # 隨機選擇指定數量的單字
     selected_words = random.sample(VOCAB_DB, count)
-    
-    # 準備英文和中文列表
     english_list = [(i+1, word['english'], word) for i, word in enumerate(selected_words)]
     chinese_list = [word['chinese'] for word in selected_words]
-    
-    # 打亂中文順序
     random.shuffle(chinese_list)
     
     return {
@@ -216,43 +203,20 @@ def main():
     st.set_page_config(page_title="英文單字測驗", page_icon="📚", layout="wide")
     st.title("🎓 英文單字特訓 App")
     
-    # 檢查資料庫
     if not VOCAB_DB:
         st.warning("⚠️ 沒有單字資料！")
-        
         with st.expander("📖 如何建立資料庫？", expanded=True):
             st. markdown("""
             ### 步驟 1: 準備 CSV 檔案
-            建立包含以下欄位的 CSV：
-            - `english`: 英文單字
-            - `chinese`: 中文意思
-            - `pos`: 詞性
-            
-            **範例：**
-            ```csv
-            english,chinese,pos
-            application,應用,n. 
-            invent,發明,v.
-            invest,投資,v.
-            ```
-            
             ### 步驟 2: 執行建立工具
-            ```bash
-            python vocab_builder.py your_vocab.csv
-            ```
-            
             ### 步驟 3: 重新整理此頁面
-            資料庫建立完成後，重新整理此頁面即可開始測驗！
             """)
-        
         st.stop()
     
-    # 側邊欄
     with st.sidebar:
-        st. header("📊 資料庫狀態")
+        st.header("📊 資料庫狀態")
         st.metric("單字總數", len(VOCAB_DB))
         
-        # 顯示資料庫檔案資訊
         try:
             if os.path.exists('vocab_database.json'):
                 file_size = os.path.getsize('vocab_database.json')
@@ -266,15 +230,10 @@ def main():
         
         with st.expander("📖 單字列表"):
             df = pd.DataFrame(VOCAB_DB)
-            st.dataframe(
-                df[['english', 'chinese', 'pos']], 
-                hide_index=True,
-                use_container_width=True
-            )
+            st.dataframe(df[['english', 'chinese', 'pos']], hide_index=True, use_container_width=True)
     
     init_state()
     
-    # Tab 分頁
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
         "🔤 克漏字", 
         "🇨🇳➡🇬🇧 中翻英", 
@@ -631,6 +590,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
