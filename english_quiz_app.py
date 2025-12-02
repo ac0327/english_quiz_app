@@ -253,7 +253,7 @@ def main():
         sentence = re.sub(re.escape(word['english']), "_______", clean_example, flags=re.IGNORECASE)
         
         st.markdown(f"### {sentence}")
-        st.info(f"💡 提示: {word['chinese']} ({word['pos']})")
+        # st.info(f"💡 提示: {word['chinese']} ({word['pos']})")
         
         with st.form(key=f'cloze_form_{st.session_state.cloze_qid}'):
             choice = st.radio("請選擇答案：", q['options'])
@@ -569,6 +569,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
