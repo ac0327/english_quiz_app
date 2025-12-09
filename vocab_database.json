@@ -3,13 +3,13 @@
     "english": "application",
     "chinese": "應用",
     "pos": "n..",
-    "example": "This **application**  plays a crucial role."
+    "example": "We need to consider the **application**  carefully."
   },
   {
     "english": "invent",
     "chinese": "發明",
     "pos": "v.",
-    "example": "The team decided to **invent**  the project."
+    "example": "It's important to **invent**  these requirements."
   },
   {
     "english": "invest",
@@ -21,7 +21,7 @@
     "english": "patent",
     "chinese": "專利",
     "pos": "n..",
-    "example": "This **patent**  plays a crucial role."
+    "example": "We need to consider the **patent**  carefully."
   },
   {
     "english": "advance",
@@ -33,43 +33,43 @@
     "english": "domestic",
     "chinese": "國內的",
     "pos": "adj.",
-    "example": "This is a very **domestic**  example."
+    "example": "The **domestic**  result exceeded our expectations."
   },
   {
     "english": "superior",
     "chinese": "優秀的",
     "pos": "adj.",
-    "example": "The **superior**  result exceeded our expectations."
+    "example": "This is a very **superior**  example."
   },
   {
     "english": "accomplished",
     "chinese": "熟練的",
     "pos": "adj.",
-    "example": "This is a very **accomplished**  example."
+    "example": "The **accomplished**  result exceeded our expectations."
   },
   {
     "english": "accomplish",
     "chinese": "完成",
     "pos": "v.",
-    "example": "The team decided to **accomplish**  the project."
+    "example": "It's important to **accomplish**  these requirements."
   },
   {
     "english": "accompany",
     "chinese": "陪伴",
     "pos": "v.",
-    "example": "The team decided to **accompany**  the project."
+    "example": "It's important to **accompany**  these requirements."
   },
   {
     "english": "assignment",
     "chinese": "任務",
     "pos": "n..",
-    "example": "The **assignment** is very important in this context."
+    "example": "We need to consider the **assignment**  carefully."
   },
   {
     "english": "inquiry",
     "chinese": "詢問",
     "pos": "n..",
-    "example": "The **inquiry** is very important in this context."
+    "example": "This **inquiry**  plays a crucial role."
   },
   {
     "english": "inquire",
@@ -87,7 +87,7 @@
     "english": "competitive",
     "chinese": "有競爭力的",
     "pos": "adj.",
-    "example": "We found a **competitive**  solution to the problem."
+    "example": "This is a very **competitive**  example."
   },
   {
     "english": "complicated",
@@ -99,19 +99,19 @@
     "english": "complain",
     "chinese": "抱怨",
     "pos": "v.",
-    "example": "The team decided to **complain**  the project."
+    "example": "It's important to **complain**  these requirements."
   },
   {
     "english": "devise",
     "chinese": "設計出",
     "pos": "v.",
-    "example": "The team decided to **devise**  the project."
+    "example": "We must **devise** this issue immediately."
   },
   {
     "english": "device",
     "chinese": "裝置",
     "pos": "n..",
-    "example": "The **device** is very important in this context."
+    "example": "We need to consider the **device**  carefully."
   },
   {
     "english": "corrosion",
@@ -123,19 +123,19 @@
     "english": "precaution",
     "chinese": "預防措施",
     "pos": "n..",
-    "example": "The **precaution** is very important in this context."
+    "example": "We need to consider the **precaution**  carefully."
   },
   {
     "english": "celebrity",
     "chinese": "名人",
     "pos": "n..",
-    "example": "We need to consider the **celebrity**  carefully."
+    "example": "This **celebrity**  plays a crucial role."
   },
   {
     "english": "improvise",
     "chinese": "即興演出",
     "pos": "n..",
-    "example": "We need to consider the **improvise**  carefully."
+    "example": "This **improvise**  plays a crucial role."
   },
   {
     "english": "alumni",
@@ -159,13 +159,13 @@
     "english": "issue",
     "chinese": "(期刊)一期, 議題",
     "pos": "n..",
-    "example": "The **issue** is very important in this context."
+    "example": "We need to consider the **issue**  carefully."
   },
   {
     "english": "anonymous",
     "chinese": "匿名的",
     "pos": "adj.",
-    "example": "The **anonymous**  result exceeded our expectations."
+    "example": "We found a **anonymous**  solution to the problem."
   },
   {
     "english": "commit",
@@ -177,7 +177,7 @@
     "english": "advocate",
     "chinese": "擁護者",
     "pos": "n..",
-    "example": "This **advocate**  plays a crucial role."
+    "example": "The **advocate** is very important in this context."
   },
   {
     "english": "antique",
@@ -189,25 +189,25 @@
     "english": "auction",
     "chinese": "拍賣",
     "pos": "n..",
-    "example": "The **auction** is very important in this context."
+    "example": "We need to consider the **auction**  carefully."
   },
   {
     "english": "upcoming",
     "chinese": "即將來臨的",
     "pos": "adj.",
-    "example": "This is a very **upcoming**  example."
+    "example": "We found a **upcoming**  solution to the problem."
   },
   {
     "english": "forthcoming",
     "chinese": "即將來臨的",
     "pos": "adj.",
-    "example": "We found a **forthcoming**  solution to the problem."
+    "example": "This is a very **forthcoming**  example."
   },
   {
     "english": "monopoly",
     "chinese": "獨佔",
     "pos": "n..",
-    "example": "The **monopoly** is very important in this context."
+    "example": "This **monopoly**  plays a crucial role."
   },
   {
     "english": "monopolize",
@@ -219,7 +219,7 @@
     "english": "apology",
     "chinese": "道歉",
     "pos": "n..",
-    "example": "The **apology** is very important in this context."
+    "example": "We need to consider the **apology**  carefully."
   },
   {
     "english": "apologize",
@@ -231,79 +231,79 @@
     "english": "consistently",
     "chinese": "始終一貫",
     "pos": "adv.",
-    "example": "The team decided to **consistently**  the project."
+    "example": "We must **consistently** this issue immediately."
   },
   {
     "english": "seasoned",
     "chinese": "經驗豐富的",
     "pos": "adj.",
-    "example": "The **seasoned**  result exceeded our expectations."
+    "example": "This is a very **seasoned**  example."
   },
   {
     "english": "consequtive",
     "chinese": "連續的",
     "pos": "adj.",
-    "example": "The **consequtive**  result exceeded our expectations."
+    "example": "This is a very **consequtive**  example."
   },
   {
     "english": "successive",
     "chinese": "連續的",
     "pos": "adj.",
-    "example": "We found a **successive**  solution to the problem."
+    "example": "This is a very **successive**  example."
   },
   {
     "english": "aggressively",
     "chinese": "積極地",
     "pos": "adv.",
-    "example": "It's important to **aggressively**  these requirements."
+    "example": "We must **aggressively** this issue immediately."
   },
   {
     "english": "absence",
     "chinese": "缺席, 缺少",
     "pos": "n..",
-    "example": "This **absence**  plays a crucial role."
+    "example": "We need to consider the **absence**  carefully."
   },
   {
     "english": "assert",
     "chinese": "主張",
     "pos": "v.",
-    "example": "The team decided to **assert**  the project."
+    "example": "It's important to **assert**  these requirements."
   },
   {
     "english": "drastic",
     "chinese": "激烈的",
     "pos": "adj.",
-    "example": "The **drastic**  result exceeded our expectations."
+    "example": "We found a **drastic**  solution to the problem."
   },
   {
     "english": "prospect",
     "chinese": "展望",
     "pos": "n..",
-    "example": "We need to consider the **prospect**  carefully."
+    "example": "The **prospect** is very important in this context."
   },
   {
     "english": "substitute",
     "chinese": "替代",
     "pos": "v.",
-    "example": "We must **substitute** this issue immediately."
+    "example": "The team decided to **substitute**  the project."
   },
   {
     "english": "substitute",
     "chinese": "代替物",
     "pos": "n..",
-    "example": "The **substitute** is very important in this context."
+    "example": "We need to consider the **substitute**  carefully."
   },
   {
     "english": "implication",
     "chinese": "暗示",
     "pos": "n..",
-    "example": "We need to consider the **implication**  carefully."
+    "example": "This **implication**  plays a crucial role."
   },
   {
     "english": "adversity",
     "chinese": "逆境",
     "pos": "n..",
-    "example": "We need to consider the **adversity**  carefully."
+    "example": "This **adversity**  plays a crucial role."
   },
   {
     "english": "promising",
@@ -321,13 +321,13 @@
     "english": "authentic",
     "chinese": "正統的",
     "pos": "adj.",
-    "example": "The **authentic**  result exceeded our expectations."
+    "example": "This is a very **authentic**  example."
   },
   {
     "english": "authorize",
     "chinese": "批准, 授權",
     "pos": "v.",
-    "example": "The team decided to **authorize**  the project."
+    "example": "We must **authorize** this issue immediately."
   },
   {
     "english": "authority",
@@ -339,7 +339,7 @@
     "english": "author",
     "chinese": "作者",
     "pos": "n..",
-    "example": "The **author** is very important in this context."
+    "example": "This **author**  plays a crucial role."
   },
   {
     "english": "instruction",
@@ -351,13 +351,13 @@
     "english": "receipt",
     "chinese": "收據",
     "pos": "n..",
-    "example": "This **receipt**  plays a crucial role."
+    "example": "We need to consider the **receipt**  carefully."
   },
   {
     "english": "recipes",
     "chinese": "食譜",
     "pos": "n..",
-    "example": "This **recipes**  plays a crucial role."
+    "example": "We need to consider the **recipes**  carefully."
   },
   {
     "english": "spare",
@@ -369,13 +369,13 @@
     "english": "spare",
     "chinese": "節省",
     "pos": "v.",
-    "example": "The team decided to **spare**  the project."
+    "example": "It's important to **spare**  these requirements."
   },
   {
     "english": "alter",
     "chinese": "修改",
     "pos": "v.",
-    "example": "The team decided to **alter**  the project."
+    "example": "We must **alter** this issue immediately."
   },
   {
     "english": "clearance",
@@ -423,13 +423,13 @@
     "english": "directory",
     "chinese": "通訊錄",
     "pos": "n.",
-    "example": "We need to consider the **directory**  carefully."
+    "example": "The **directory** is very important in this context."
   },
   {
     "english": "contrary",
     "chinese": "相反(情況)",
     "pos": "n.",
-    "example": "This **contrary**  plays a crucial role."
+    "example": "We need to consider the **contrary**  carefully."
   },
   {
     "english": "disturbing",
@@ -447,13 +447,13 @@
     "english": "foster",
     "chinese": "促進",
     "pos": "v.",
-    "example": "It's important to **foster**  these requirements."
+    "example": "We must **foster** this issue immediately."
   },
   {
     "english": "forest",
     "chinese": "森林",
     "pos": "n.",
-    "example": "This **forest**  plays a crucial role."
+    "example": "We need to consider the **forest**  carefully."
   },
   {
     "english": "compile",
@@ -465,25 +465,25 @@
     "english": "permanently",
     "chinese": "永久地",
     "pos": "adv.",
-    "example": "We must **permanently** this issue immediately."
+    "example": "The team decided to **permanently**  the project."
   },
   {
     "english": "indefinitely",
     "chinese": "無期限地",
     "pos": "adv.",
-    "example": "The team decided to **indefinitely**  the project."
+    "example": "We must **indefinitely** this issue immediately."
   },
   {
     "english": "subsequent",
     "chinese": "隨後的",
     "pos": "adj.",
-    "example": "The **subsequent**  result exceeded our expectations."
+    "example": "We found a **subsequent**  solution to the problem."
   },
   {
     "english": "consequence",
     "chinese": "後果",
     "pos": "n.",
-    "example": "This **consequence**  plays a crucial role."
+    "example": "The **consequence** is very important in this context."
   },
   {
     "english": "overview",
@@ -501,7 +501,7 @@
     "english": "oversee",
     "chinese": "監督",
     "pos": "v.",
-    "example": "The team decided to **oversee**  the project."
+    "example": "We must **oversee** this issue immediately."
   },
   {
     "english": "outlook",
@@ -519,127 +519,127 @@
     "english": "expert",
     "chinese": "專家",
     "pos": "n.",
-    "example": "This **expert**  plays a crucial role."
+    "example": "The **expert** is very important in this context."
   },
   {
     "english": "remainder",
     "chinese": "剩餘的東西",
     "pos": "n.",
-    "example": "The **remainder** is very important in this context."
+    "example": "This **remainder**  plays a crucial role."
   },
   {
     "english": "reminder",
     "chinese": "作為提醒的東西",
     "pos": "n.",
-    "example": "This **reminder**  plays a crucial role."
+    "example": "We need to consider the **reminder**  carefully."
   },
   {
     "english": "apparently",
     "chinese": "看起來…",
     "pos": "adv.",
-    "example": "It's important to **apparently**  these requirements."
+    "example": "We must **apparently** this issue immediately."
   },
   {
     "english": "advisable",
     "chinese": "可取的, 明智的",
     "pos": "adj.",
-    "example": "This is a very **advisable**  example."
+    "example": "We found a **advisable**  solution to the problem."
   },
   {
     "english": "appeal",
     "chinese": "上訴",
     "pos": "v.",
-    "example": "It's important to **appeal**  these requirements."
+    "example": "We must **appeal** this issue immediately."
   },
   {
     "english": "appear",
     "chinese": "出現",
     "pos": "v.",
-    "example": "It's important to **appear**  these requirements."
+    "example": "The team decided to **appear**  the project."
   },
   {
     "english": "acquaint",
     "chinese": "使..熟悉",
     "pos": "v.",
-    "example": "It's important to **acquaint**  these requirements."
+    "example": "We must **acquaint** this issue immediately."
   },
   {
     "english": "acquire",
     "chinese": "取得",
     "pos": "v.",
-    "example": "We must **acquire** this issue immediately."
+    "example": "The team decided to **acquire**  the project."
   },
   {
     "english": "instruct",
     "chinese": "指示",
     "pos": "n.",
-    "example": "The **instruct** is very important in this context."
+    "example": "This **instruct**  plays a crucial role."
   },
   {
     "english": "delegate",
     "chinese": "委任",
     "pos": "v.",
-    "example": "We must **delegate** this issue immediately."
+    "example": "It's important to **delegate**  these requirements."
   },
   {
     "english": "delegate",
     "chinese": "代表",
     "pos": "n.",
-    "example": "This **delegate**  plays a crucial role."
+    "example": "We need to consider the **delegate**  carefully."
   },
   {
     "english": "reluctantly",
     "chinese": "不情願地",
     "pos": "adv.",
-    "example": "The team decided to **reluctantly**  the project."
+    "example": "We must **reluctantly** this issue immediately."
   },
   {
     "english": "concentrate",
     "chinese": "集中",
     "pos": "v.",
-    "example": "We must **concentrate** this issue immediately."
+    "example": "The team decided to **concentrate**  the project."
   },
   {
     "english": "prohibit",
     "chinese": "禁止",
     "pos": "v.",
-    "example": "It's important to **prohibit**  these requirements."
+    "example": "The team decided to **prohibit**  the project."
   },
   {
     "english": "legislation",
     "chinese": "立法",
     "pos": "n.",
-    "example": "The **legislation** is very important in this context."
+    "example": "This **legislation**  plays a crucial role."
   },
   {
     "english": "classified",
     "chinese": "機密的",
     "pos": "adj.",
-    "example": "This is a very **classified**  example."
+    "example": "We found a **classified**  solution to the problem."
   },
   {
     "english": "confidential",
     "chinese": "機密的",
     "pos": "adj.",
-    "example": "This is a very **confidential**  example."
+    "example": "We found a **confidential**  solution to the problem."
   },
   {
     "english": "assume",
     "chinese": "假設",
     "pos": "v.",
-    "example": "It's important to **assume**  these requirements."
+    "example": "The team decided to **assume**  the project."
   },
   {
     "english": "persume",
     "chinese": "假設, 承擔",
     "pos": "v.",
-    "example": "The team decided to **persume**  the project."
+    "example": "We must **persume** this issue immediately."
   },
   {
     "english": "resume",
     "chinese": "重新開始",
     "pos": "v.",
-    "example": "It's important to **resume**  these requirements."
+    "example": "We must **resume** this issue immediately."
   },
   {
     "english": "undertake",
@@ -657,7 +657,7 @@
     "english": "coordinate",
     "chinese": "協調",
     "pos": "v.",
-    "example": "We must **coordinate** this issue immediately."
+    "example": "It's important to **coordinate**  these requirements."
   },
   {
     "english": "corporation",
@@ -669,13 +669,13 @@
     "english": "cooperation",
     "chinese": "合作",
     "pos": "n.",
-    "example": "This **cooperation**  plays a crucial role."
+    "example": "We need to consider the **cooperation**  carefully."
   },
   {
     "english": "abstract",
     "chinese": "抽象的",
     "pos": "adj.",
-    "example": "We found a **abstract**  solution to the problem."
+    "example": "This is a very **abstract**  example."
   },
   {
     "english": "attractive",
@@ -687,37 +687,37 @@
     "english": "attract",
     "chinese": "吸引",
     "pos": "v.",
-    "example": "We must **attract** this issue immediately."
+    "example": "The team decided to **attract**  the project."
   },
   {
     "english": "advise",
     "chinese": "建議",
     "pos": "v.",
-    "example": "The team decided to **advise**  the project."
+    "example": "It's important to **advise**  these requirements."
   },
   {
     "english": "advice",
     "chinese": "勸告",
     "pos": "n.",
-    "example": "We need to consider the **advice**  carefully."
+    "example": "The **advice** is very important in this context."
   },
   {
     "english": "revise",
     "chinese": "修改",
     "pos": "v.",
-    "example": "The team decided to **revise**  the project."
+    "example": "It's important to **revise**  these requirements."
   },
   {
     "english": "means",
     "chinese": "方法, 手段",
     "pos": "n..",
-    "example": "We need to consider the **means**  carefully."
+    "example": "The **means** is very important in this context."
   },
   {
     "english": "contemporary",
     "chinese": "當代的",
     "pos": "adj.",
-    "example": "We found a **contemporary**  solution to the problem."
+    "example": "This is a very **contemporary**  example."
   },
   {
     "english": "initial",
@@ -729,19 +729,19 @@
     "english": "initiate",
     "chinese": "開始 (實施)",
     "pos": "v.",
-    "example": "It's important to **initiate**  these requirements."
+    "example": "The team decided to **initiate**  the project."
   },
   {
     "english": "intensify",
     "chinese": "強化",
     "pos": "v.",
-    "example": "We must **intensify** this issue immediately."
+    "example": "The team decided to **intensify**  the project."
   },
   {
     "english": "favorably",
     "chinese": "善意地,  順利地",
     "pos": "adv.",
-    "example": "We must **favorably** this issue immediately."
+    "example": "It's important to **favorably**  these requirements."
   },
   {
     "english": "stagnant",
@@ -759,31 +759,31 @@
     "english": "incentive",
     "chinese": "獎勵(金)",
     "pos": "n.",
-    "example": "The **incentive** is very important in this context."
+    "example": "We need to consider the **incentive**  carefully."
   },
   {
     "english": "mastermind",
     "chinese": "策畫者",
     "pos": "n.",
-    "example": "We need to consider the **mastermind**  carefully."
+    "example": "This **mastermind**  plays a crucial role."
   },
   {
     "english": "brisk",
     "chinese": "興旺的",
     "pos": "adj.",
-    "example": "This is a very **brisk**  example."
+    "example": "The **brisk**  result exceeded our expectations."
   },
   {
     "english": "boom",
     "chinese": "繁榮",
     "pos": "n.",
-    "example": "We need to consider the **boom**  carefully."
+    "example": "This **boom**  plays a crucial role."
   },
   {
     "english": "thrive",
     "chinese": "繁榮",
     "pos": "v.",
-    "example": "We must **thrive** this issue immediately."
+    "example": "The team decided to **thrive**  the project."
   },
   {
     "english": "soar",
@@ -801,7 +801,7 @@
     "english": "boost",
     "chinese": "推動 (景氣)",
     "pos": "v.",
-    "example": "The team decided to **boost**  the project."
+    "example": "It's important to **boost**  these requirements."
   },
   {
     "english": "costly",
@@ -813,19 +813,19 @@
     "english": "wane",
     "chinese": "衰退",
     "pos": "n.",
-    "example": "This **wane**  plays a crucial role."
+    "example": "We need to consider the **wane**  carefully."
   },
   {
     "english": "depression",
     "chinese": "不景氣",
     "pos": "n.",
-    "example": "This **depression**  plays a crucial role."
+    "example": "The **depression** is very important in this context."
   },
   {
     "english": "dwindle",
     "chinese": "逐漸減少",
     "pos": "v.",
-    "example": "The team decided to **dwindle**  the project."
+    "example": "We must **dwindle** this issue immediately."
   },
   {
     "english": "impede",
@@ -837,25 +837,25 @@
     "english": "content",
     "chinese": "滿意的",
     "pos": "adj.",
-    "example": "This is a very **content**  example."
+    "example": "The **content**  result exceeded our expectations."
   },
   {
     "english": "content",
     "chinese": "內容",
     "pos": "n.",
-    "example": "We need to consider the **content**  carefully."
+    "example": "The **content** is very important in this context."
   },
   {
     "english": "confident",
     "chinese": "有自信的",
     "pos": "adj.",
-    "example": "The **confident**  result exceeded our expectations."
+    "example": "This is a very **confident**  example."
   },
   {
     "english": "commentary",
     "chinese": "評論",
     "pos": "n.",
-    "example": "The **commentary** is very important in this context."
+    "example": "We need to consider the **commentary**  carefully."
   },
   {
     "english": "firm",
@@ -867,7 +867,7 @@
     "english": "firm",
     "chinese": "公司",
     "pos": "n.",
-    "example": "This **firm**  plays a crucial role."
+    "example": "The **firm** is very important in this context."
   },
   {
     "english": "film",
@@ -879,7 +879,7 @@
     "english": "interact",
     "chinese": "交流",
     "pos": "v.",
-    "example": "We must **interact** this issue immediately."
+    "example": "It's important to **interact**  these requirements."
   },
   {
     "english": "biography",
@@ -891,13 +891,13 @@
     "english": "observe",
     "chinese": "觀察, 遵守",
     "pos": "v.",
-    "example": "The team decided to **observe**  the project."
+    "example": "We must **observe** this issue immediately."
   },
   {
     "english": "disclose",
     "chinese": "公開",
     "pos": "v.",
-    "example": "It's important to **disclose**  these requirements."
+    "example": "We must **disclose** this issue immediately."
   },
   {
     "english": "bulletin",
@@ -915,13 +915,13 @@
     "english": "attraction",
     "chinese": "景點",
     "pos": "n.",
-    "example": "We need to consider the **attraction**  carefully."
+    "example": "The **attraction** is very important in this context."
   },
   {
     "english": "itinerary",
     "chinese": "旅遊行程",
     "pos": "n.",
-    "example": "We need to consider the **itinerary**  carefully."
+    "example": "This **itinerary**  plays a crucial role."
   },
   {
     "english": "exotic",
@@ -933,13 +933,13 @@
     "english": "diversy",
     "chinese": "多樣的",
     "pos": "adj.",
-    "example": "We found a **diversy**  solution to the problem."
+    "example": "The **diversy**  result exceeded our expectations."
   },
   {
     "english": "baggage",
     "chinese": "行李",
     "pos": "n.",
-    "example": "This **baggage**  plays a crucial role."
+    "example": "The **baggage** is very important in this context."
   },
   {
     "english": "luggage",
@@ -963,37 +963,37 @@
     "english": "declare",
     "chinese": "(海關)申報",
     "pos": "v.",
-    "example": "The team decided to **declare**  the project."
+    "example": "It's important to **declare**  these requirements."
   },
   {
     "english": "assemble",
     "chinese": "組裝",
     "pos": "v.",
-    "example": "We must **assemble** this issue immediately."
+    "example": "The team decided to **assemble**  the project."
   },
   {
     "english": "renovate",
     "chinese": "翻新",
     "pos": "v.",
-    "example": "The team decided to **renovate**  the project."
+    "example": "We must **renovate** this issue immediately."
   },
   {
     "english": "attribute",
     "chinese": "把…歸因於",
     "pos": "v.",
-    "example": "It's important to **attribute**  these requirements."
+    "example": "We must **attribute** this issue immediately."
   },
   {
     "english": "distribute",
     "chinese": "分配",
     "pos": "v.",
-    "example": "The team decided to **distribute**  the project."
+    "example": "It's important to **distribute**  these requirements."
   },
   {
     "english": "contribute",
     "chinese": "貢獻",
     "pos": "v.",
-    "example": "We must **contribute** this issue immediately."
+    "example": "The team decided to **contribute**  the project."
   },
   {
     "english": "tailored",
@@ -1017,19 +1017,19 @@
     "english": "capable",
     "chinese": "有能力做…的",
     "pos": "adj.",
-    "example": "The **capable**  result exceeded our expectations."
+    "example": "We found a **capable**  solution to the problem."
   },
   {
     "english": "separately",
     "chinese": "分別",
     "pos": "adv.",
-    "example": "We must **separately** this issue immediately."
+    "example": "The team decided to **separately**  the project."
   },
   {
     "english": "respectively",
     "chinese": "分別",
     "pos": "adv.",
-    "example": "The team decided to **respectively**  the project."
+    "example": "It's important to **respectively**  these requirements."
   },
   {
     "english": "appropriate",
@@ -1041,19 +1041,19 @@
     "english": "appreciate",
     "chinese": "欣賞, 感激",
     "pos": "v.",
-    "example": "It's important to **appreciate**  these requirements."
+    "example": "We must **appreciate** this issue immediately."
   },
   {
     "english": "infuriate",
     "chinese": "激怒",
     "pos": "v.",
-    "example": "The team decided to **infuriate**  the project."
+    "example": "We must **infuriate** this issue immediately."
   },
   {
     "english": "incompetence",
     "chinese": "不稱職",
     "pos": "n..",
-    "example": "We need to consider the **incompetence**  carefully."
+    "example": "This **incompetence**  plays a crucial role."
   },
   {
     "english": "compete",
@@ -1065,13 +1065,13 @@
     "english": "complete",
     "chinese": "完整(的)",
     "pos": "v.",
-    "example": "We must **complete** this issue immediately."
+    "example": "It's important to **complete**  these requirements."
   },
   {
     "english": "courteous",
     "chinese": "有禮貌的",
     "pos": "adj.",
-    "example": "This is a very **courteous**  example."
+    "example": "The **courteous**  result exceeded our expectations."
   },
   {
     "english": "curious",
@@ -1083,7 +1083,7 @@
     "english": "polite",
     "chinese": "有禮貌的",
     "pos": "adj.",
-    "example": "We found a **polite**  solution to the problem."
+    "example": "The **polite**  result exceeded our expectations."
   },
   {
     "english": "depart",
@@ -1095,37 +1095,37 @@
     "english": "outgoing",
     "chinese": "出發的, 離開的",
     "pos": "adj.",
-    "example": "We found a **outgoing**  solution to the problem."
+    "example": "The **outgoing**  result exceeded our expectations."
   },
   {
     "english": "outstanding",
     "chinese": "傑出的",
     "pos": "adj.",
-    "example": "This is a very **outstanding**  example."
+    "example": "We found a **outstanding**  solution to the problem."
   },
   {
     "english": "carrier",
     "chinese": "運輸公司, 運輸工具",
     "pos": "n..",
-    "example": "We need to consider the **carrier**  carefully."
+    "example": "This **carrier**  plays a crucial role."
   },
   {
     "english": "custom",
     "chinese": "習俗",
     "pos": "n..",
-    "example": "We need to consider the **custom**  carefully."
+    "example": "This **custom**  plays a crucial role."
   },
   {
     "english": "customs",
     "chinese": "海關",
     "pos": "n..",
-    "example": "This **customs**  plays a crucial role."
+    "example": "We need to consider the **customs**  carefully."
   },
   {
     "english": "customer",
     "chinese": "顧客",
     "pos": "n..",
-    "example": "This **customer**  plays a crucial role."
+    "example": "We need to consider the **customer**  carefully."
   },
   {
     "english": "dramatic",
@@ -1143,7 +1143,7 @@
     "english": "hospitable",
     "chinese": "好客的",
     "pos": "adj.",
-    "example": "The **hospitable**  result exceeded our expectations."
+    "example": "We found a **hospitable**  solution to the problem."
   },
   {
     "english": "indulge",
@@ -1155,13 +1155,13 @@
     "english": "proximity",
     "chinese": "接近",
     "pos": "n..",
-    "example": "We need to consider the **proximity**  carefully."
+    "example": "The **proximity** is very important in this context."
   },
   {
     "english": "alliance",
     "chinese": "聯盟",
     "pos": "n..",
-    "example": "We need to consider the **alliance**  carefully."
+    "example": "This **alliance**  plays a crucial role."
   },
   {
     "english": "stipulation",
@@ -1173,19 +1173,19 @@
     "english": "term",
     "chinese": "期限;條例;學期",
     "pos": "n.",
-    "example": "The **term** is very important in this context."
+    "example": "We need to consider the **term**  carefully."
   },
   {
     "english": "compromise",
     "chinese": "妥協",
     "pos": "n.",
-    "example": "The **compromise** is very important in this context."
+    "example": "This **compromise**  plays a crucial role."
   },
   {
     "english": "negotiation",
     "chinese": "協商",
     "pos": "n.",
-    "example": "We need to consider the **negotiation**  carefully."
+    "example": "This **negotiation**  plays a crucial role."
   },
   {
     "english": "negotiate",
@@ -1197,7 +1197,7 @@
     "english": "negative",
     "chinese": "負面的",
     "pos": "adj.",
-    "example": "The **negative**  result exceeded our expectations."
+    "example": "This is a very **negative**  example."
   },
   {
     "english": "resign",
@@ -1209,7 +1209,7 @@
     "english": "sign",
     "chinese": "簽名",
     "pos": "v.",
-    "example": "The team decided to **sign**  the project."
+    "example": "We must **sign** this issue immediately."
   },
   {
     "english": "signture",
@@ -1221,37 +1221,37 @@
     "english": "primary",
     "chinese": "首要的",
     "pos": "adj.",
-    "example": "This is a very **primary**  example."
+    "example": "The **primary**  result exceeded our expectations."
   },
   {
     "english": "collaboration",
     "chinese": "合作",
     "pos": "n.",
-    "example": "We need to consider the **collaboration**  carefully."
+    "example": "This **collaboration**  plays a crucial role."
   },
   {
     "english": "cooperation",
     "chinese": "合作",
     "pos": "n.",
-    "example": "The **cooperation** is very important in this context."
+    "example": "This **cooperation**  plays a crucial role."
   },
   {
     "english": "dedicate",
     "chinese": "奉獻",
     "pos": "v.",
-    "example": "The team decided to **dedicate**  the project."
+    "example": "It's important to **dedicate**  these requirements."
   },
   {
     "english": "imperative",
     "chinese": "極重要的",
     "pos": "adj.",
-    "example": "The **imperative**  result exceeded our expectations."
+    "example": "This is a very **imperative**  example."
   },
   {
     "english": "commision",
     "chinese": "安排…做 ; 委任",
     "pos": "v.",
-    "example": "It's important to **commision**  these requirements."
+    "example": "The team decided to **commision**  the project."
   },
   {
     "english": "commision",
@@ -1263,7 +1263,7 @@
     "english": "omit",
     "chinese": "疏忽, 遺漏",
     "pos": "v.",
-    "example": "It's important to **omit**  these requirements."
+    "example": "We must **omit** this issue immediately."
   },
   {
     "english": "proficient",
@@ -1305,19 +1305,19 @@
     "english": "option",
     "chinese": "選擇",
     "pos": "n.",
-    "example": "This **option**  plays a crucial role."
+    "example": "The **option** is very important in this context."
   },
   {
     "english": "opposition",
     "chinese": "反對;反抗",
     "pos": "n.",
-    "example": "The **opposition** is very important in this context."
+    "example": "We need to consider the **opposition**  carefully."
   },
   {
     "english": "operation",
     "chinese": "操作;運作",
     "pos": "n.",
-    "example": "The **operation** is very important in this context."
+    "example": "This **operation**  plays a crucial role."
   },
   {
     "english": "proceed",
@@ -1329,19 +1329,19 @@
     "english": "procedure",
     "chinese": "程序",
     "pos": "n.",
-    "example": "The **procedure** is very important in this context."
+    "example": "We need to consider the **procedure**  carefully."
   },
   {
     "english": "bid",
     "chinese": "投標",
     "pos": "n.",
-    "example": "This **bid**  plays a crucial role."
+    "example": "We need to consider the **bid**  carefully."
   },
   {
     "english": "settle",
     "chinese": "解決;和好",
     "pos": "v.",
-    "example": "It's important to **settle**  these requirements."
+    "example": "We must **settle** this issue immediately."
   },
   {
     "english": "terminate",
@@ -1353,37 +1353,37 @@
     "english": "foundation",
     "chinese": "基礎;創辦",
     "pos": "n.",
-    "example": "The **foundation** is very important in this context."
+    "example": "This **foundation**  plays a crucial role."
   },
   {
     "english": "bulk",
     "chinese": "大量",
     "pos": "n.",
-    "example": "This **bulk**  plays a crucial role."
+    "example": "We need to consider the **bulk**  carefully."
   },
   {
     "english": "inventory",
     "chinese": "庫存",
     "pos": "n.",
-    "example": "We need to consider the **inventory**  carefully."
+    "example": "This **inventory**  plays a crucial role."
   },
   {
     "english": "plant",
     "chinese": "植物;工廠",
     "pos": "n.",
-    "example": "The **plant** is very important in this context."
+    "example": "This **plant**  plays a crucial role."
   },
   {
     "english": "planet",
     "chinese": "行星",
     "pos": "n.",
-    "example": "We need to consider the **planet**  carefully."
+    "example": "This **planet**  plays a crucial role."
   },
   {
     "english": "plane",
     "chinese": "飛機;平面",
     "pos": "n.",
-    "example": "We need to consider the **plane**  carefully."
+    "example": "The **plane** is very important in this context."
   },
   {
     "english": "plan",
@@ -1395,13 +1395,13 @@
     "english": "plate",
     "chinese": "盤子",
     "pos": "n.",
-    "example": "The **plate** is very important in this context."
+    "example": "We need to consider the **plate**  carefully."
   },
   {
     "english": "commercial",
     "chinese": "廣告",
     "pos": "n.",
-    "example": "This **commercial**  plays a crucial role."
+    "example": "The **commercial** is very important in this context."
   },
   {
     "english": "commercial",
@@ -1413,7 +1413,7 @@
     "english": "contact",
     "chinese": "聯繫;接觸",
     "pos": "n.",
-    "example": "The **contact** is very important in this context."
+    "example": "We need to consider the **contact**  carefully."
   },
   {
     "english": "contract",
@@ -1431,7 +1431,7 @@
     "english": "connect",
     "chinese": "連接",
     "pos": "v.",
-    "example": "The team decided to **connect**  the project."
+    "example": "It's important to **connect**  these requirements."
   },
   {
     "english": "constrict",
@@ -1443,67 +1443,67 @@
     "english": "contrast",
     "chinese": "對比;差異",
     "pos": "n.",
-    "example": "The **contrast** is very important in this context."
+    "example": "This **contrast**  plays a crucial role."
   },
   {
     "english": "conduct",
     "chinese": "組織;進行",
     "pos": "v.",
-    "example": "We must **conduct** this issue immediately."
+    "example": "It's important to **conduct**  these requirements."
   },
   {
     "english": "invoice",
     "chinese": "發票",
     "pos": "n.",
-    "example": "We need to consider the **invoice**  carefully."
+    "example": "The **invoice** is very important in this context."
   },
   {
     "english": "discount",
     "chinese": "折扣",
     "pos": "n.",
-    "example": "The **discount** is very important in this context."
+    "example": "This **discount**  plays a crucial role."
   },
   {
     "english": "discount",
     "chinese": "忽視;打折",
     "pos": "v.",
-    "example": "The team decided to **discount**  the project."
+    "example": "It's important to **discount**  these requirements."
   },
   {
     "english": "account",
     "chinese": "帳戶",
     "pos": "n.",
-    "example": "We need to consider the **account**  carefully."
+    "example": "The **account** is very important in this context."
   },
   {
     "english": "count",
     "chinese": "計數;數數",
     "pos": "v.",
-    "example": "The team decided to **count**  the project."
+    "example": "We must **count** this issue immediately."
   },
   {
     "english": "distribute",
     "chinese": "分發;分配",
     "pos": "v.",
-    "example": "We must **distribute** this issue immediately."
+    "example": "It's important to **distribute**  these requirements."
   },
   {
     "english": "distract",
     "chinese": "使分心;干擾",
     "pos": "v.",
-    "example": "It's important to **distract**  these requirements."
+    "example": "We must **distract** this issue immediately."
   },
   {
     "english": "disturb",
     "chinese": "打斷;干擾",
     "pos": "v.",
-    "example": "It's important to **disturb**  these requirements."
+    "example": "We must **disturb** this issue immediately."
   },
   {
     "english": "describe",
     "chinese": "描述",
     "pos": "v.",
-    "example": "The team decided to **describe**  the project."
+    "example": "It's important to **describe**  these requirements."
   },
   {
     "english": "insure",
@@ -1515,7 +1515,7 @@
     "english": "assure",
     "chinese": "確保; 使確信",
     "pos": "v.",
-    "example": "The team decided to **assure**  the project."
+    "example": "We must **assure** this issue immediately."
   },
   {
     "english": "measure",
@@ -1527,13 +1527,13 @@
     "english": "measure",
     "chinese": "量測",
     "pos": "v.",
-    "example": "We must **measure** this issue immediately."
+    "example": "The team decided to **measure**  the project."
   },
   {
     "english": "subject",
     "chinese": "(討論, 研究) 主題 ; 學科",
     "pos": "n.",
-    "example": "The **subject** is very important in this context."
+    "example": "We need to consider the **subject**  carefully."
   },
   {
     "english": "subject",
@@ -1545,7 +1545,7 @@
     "english": "subject to",
     "chinese": "取決於",
     "pos": "adj.",
-    "example": "This is a very **subject to**  example."
+    "example": "The **subject to**  result exceeded our expectations."
   },
   {
     "english": "satisfactory",
@@ -1563,19 +1563,19 @@
     "english": "paycheck",
     "chinese": "工資",
     "pos": "n.",
-    "example": "We need to consider the **paycheck**  carefully."
+    "example": "This **paycheck**  plays a crucial role."
   },
   {
     "english": "bargain",
     "chinese": "便宜貨;協議",
     "pos": "n.",
-    "example": "We need to consider the **bargain**  carefully."
+    "example": "The **bargain** is very important in this context."
   },
   {
     "english": "bargain",
     "chinese": "討價還價",
     "pos": "v.",
-    "example": "The team decided to **bargain**  the project."
+    "example": "We must **bargain** this issue immediately."
   },
   {
     "english": "clientele",
@@ -1587,37 +1587,37 @@
     "english": "acclaim",
     "chinese": "(公開)稱讚",
     "pos": "n.",
-    "example": "We need to consider the **acclaim**  carefully."
+    "example": "This **acclaim**  plays a crucial role."
   },
   {
     "english": "cliam",
     "chinese": "宣稱;主張",
     "pos": "v.",
-    "example": "The team decided to **cliam**  the project."
+    "example": "We must **cliam** this issue immediately."
   },
   {
     "english": "encompass",
     "chinese": "包含",
     "pos": "v.",
-    "example": "We must **encompass** this issue immediately."
+    "example": "The team decided to **encompass**  the project."
   },
   {
     "english": "commodity",
     "chinese": "商品",
     "pos": "n.",
-    "example": "This **commodity**  plays a crucial role."
+    "example": "The **commodity** is very important in this context."
   },
   {
     "english": "merchandise",
     "chinese": "商品",
     "pos": "n.",
-    "example": "We need to consider the **merchandise**  carefully."
+    "example": "This **merchandise**  plays a crucial role."
   },
   {
     "english": "praise",
     "chinese": "讚揚",
     "pos": "v.",
-    "example": "The team decided to **praise**  the project."
+    "example": "It's important to **praise**  these requirements."
   },
   {
     "english": "quote",
@@ -1629,19 +1629,19 @@
     "english": "quota",
     "chinese": "配額",
     "pos": "n.",
-    "example": "The **quota** is very important in this context."
+    "example": "This **quota**  plays a crucial role."
   },
   {
     "english": "consign",
     "chinese": "托運;交付",
     "pos": "v.",
-    "example": "It's important to **consign**  these requirements."
+    "example": "The team decided to **consign**  the project."
   },
   {
     "english": "consignment",
     "chinese": "托運的貨物",
     "pos": "n.",
-    "example": "This **consignment**  plays a crucial role."
+    "example": "The **consignment** is very important in this context."
   },
   {
     "english": "assign",
@@ -1653,7 +1653,7 @@
     "english": "fragile",
     "chinese": "易損壞的；易碎的",
     "pos": "adj.",
-    "example": "This is a very **fragile**  example."
+    "example": "We found a **fragile**  solution to the problem."
   },
   {
     "english": "perishable",
@@ -1665,25 +1665,25 @@
     "english": "ensure",
     "chinese": "確保；保證",
     "pos": "v.",
-    "example": "We must **ensure** this issue immediately."
+    "example": "The team decided to **ensure**  the project."
   },
   {
     "english": "courier",
     "chinese": "快遞員",
     "pos": "n.",
-    "example": "The **courier** is very important in this context."
+    "example": "We need to consider the **courier**  carefully."
   },
   {
     "english": "address",
     "chinese": "處理 ; 演講",
     "pos": "v.",
-    "example": "It's important to **address**  these requirements."
+    "example": "The team decided to **address**  the project."
   },
   {
     "english": "article",
     "chinese": "文章 ; 物件",
     "pos": "n.",
-    "example": "We need to consider the **article**  carefully."
+    "example": "This **article**  plays a crucial role."
   },
   {
     "english": "efficient",
@@ -1695,7 +1695,7 @@
     "english": "enclose",
     "chinese": "隨信（或包裹）附上 ; 把…圍起來",
     "pos": "v.",
-    "example": "It's important to **enclose**  these requirements."
+    "example": "The team decided to **enclose**  the project."
   },
   {
     "english": "formerly",
@@ -1707,25 +1707,25 @@
     "english": "acknowledge",
     "chinese": "承認",
     "pos": "v.",
-    "example": "We must **acknowledge** this issue immediately."
+    "example": "The team decided to **acknowledge**  the project."
   },
   {
     "english": "caution",
     "chinese": "謹慎，小心",
     "pos": "n.",
-    "example": "We need to consider the **caution**  carefully."
+    "example": "This **caution**  plays a crucial role."
   },
   {
     "english": "caution",
     "chinese": "警告 ; 告誡",
     "pos": "v.",
-    "example": "We must **caution** this issue immediately."
+    "example": "The team decided to **caution**  the project."
   },
   {
     "english": "correspondence",
     "chinese": "信件",
     "pos": "n.",
-    "example": "We need to consider the **correspondence**  carefully."
+    "example": "The **correspondence** is very important in this context."
   },
   {
     "english": "impose",
@@ -1737,7 +1737,7 @@
     "english": "compose",
     "chinese": "組成 ; 作曲；創作",
     "pos": "v.",
-    "example": "We must **compose** this issue immediately."
+    "example": "The team decided to **compose**  the project."
   },
   {
     "english": "detach",
@@ -1749,7 +1749,7 @@
     "english": "recipient",
     "chinese": "接受者;領受者",
     "pos": "n.",
-    "example": "The **recipient** is very important in this context."
+    "example": "This **recipient**  plays a crucial role."
   },
   {
     "english": "reception",
@@ -1761,25 +1761,25 @@
     "english": "affix",
     "chinese": "使固定；附上",
     "pos": "v.",
-    "example": "We must **affix** this issue immediately."
+    "example": "The team decided to **affix**  the project."
   },
   {
     "english": "oblige",
     "chinese": "責成；強迫",
     "pos": "v.",
-    "example": "It's important to **oblige**  these requirements."
+    "example": "We must **oblige** this issue immediately."
   },
   {
     "english": "compensate",
     "chinese": "賠償;補償",
     "pos": "v.",
-    "example": "The team decided to **compensate**  the project."
+    "example": "It's important to **compensate**  these requirements."
   },
   {
     "english": "complimentary",
     "chinese": "免費贈送的 ; 讚美的",
     "pos": "adj.",
-    "example": "This is a very **complimentary**  example."
+    "example": "The **complimentary**  result exceeded our expectations."
   },
   {
     "english": "complementary",
@@ -1791,7 +1791,7 @@
     "english": "flavor",
     "chinese": "風味",
     "pos": "n.",
-    "example": "The **flavor** is very important in this context."
+    "example": "This **flavor**  plays a crucial role."
   },
   {
     "english": "favor",
@@ -1803,13 +1803,13 @@
     "english": "favor",
     "chinese": "支持 ; 贊同 ; 較喜歡",
     "pos": "v.",
-    "example": "The team decided to **favor**  the project."
+    "example": "It's important to **favor**  these requirements."
   },
   {
     "english": "accommodate",
     "chinese": "為…提供住宿;容納",
     "pos": "v.",
-    "example": "We must **accommodate** this issue immediately."
+    "example": "It's important to **accommodate**  these requirements."
   },
   {
     "english": "refreshment",
@@ -1821,19 +1821,19 @@
     "english": "cater",
     "chinese": "提供飲食;承辦（宴席）",
     "pos": "v.",
-    "example": "The team decided to **cater**  the project."
+    "example": "It's important to **cater**  these requirements."
   },
   {
     "english": "beverage",
     "chinese": "飲料",
     "pos": "n.",
-    "example": "This **beverage**  plays a crucial role."
+    "example": "We need to consider the **beverage**  carefully."
   },
   {
     "english": "retain",
     "chinese": "保持 ; 保留 ; 留住;",
     "pos": "v.",
-    "example": "The team decided to **retain**  the project."
+    "example": "We must **retain** this issue immediately."
   },
   {
     "english": "maintain",
@@ -1845,13 +1845,13 @@
     "english": "contain",
     "chinese": "包含 ; 容納",
     "pos": "v.",
-    "example": "It's important to **contain**  these requirements."
+    "example": "We must **contain** this issue immediately."
   },
   {
     "english": "cuisine",
     "chinese": "烹飪，烹調",
     "pos": "n.",
-    "example": "This **cuisine**  plays a crucial role."
+    "example": "We need to consider the **cuisine**  carefully."
   },
   {
     "english": "prior",
@@ -1869,19 +1869,19 @@
     "english": "sip",
     "chinese": "小口啜飲",
     "pos": "v.",
-    "example": "We must **sip** this issue immediately."
+    "example": "It's important to **sip**  these requirements."
   },
   {
     "english": "stir",
     "chinese": "攪拌",
     "pos": "v.",
-    "example": "The team decided to **stir**  the project."
+    "example": "It's important to **stir**  these requirements."
   },
   {
     "english": "obtain",
     "chinese": "得到，獲得",
     "pos": "v.",
-    "example": "We must **obtain** this issue immediately."
+    "example": "It's important to **obtain**  these requirements."
   },
   {
     "english": "sutain",
@@ -1893,7 +1893,7 @@
     "english": "climb",
     "chinese": "上升;攀升",
     "pos": "v.",
-    "example": "The team decided to **climb**  the project."
+    "example": "We must **climb** this issue immediately."
   },
   {
     "english": "ascent",
@@ -1905,7 +1905,7 @@
     "english": "plummet",
     "chinese": "暴跌，急遽下降",
     "pos": "v.",
-    "example": "The team decided to **plummet**  the project."
+    "example": "We must **plummet** this issue immediately."
   },
   {
     "english": "hover",
@@ -1917,37 +1917,37 @@
     "english": "decline",
     "chinese": "下降 ; 減少 ; 拒絕",
     "pos": "v.",
-    "example": "We must **decline** this issue immediately."
+    "example": "The team decided to **decline**  the project."
   },
   {
     "english": "projection",
     "chinese": "預測，推測",
     "pos": "n.",
-    "example": "This **projection**  plays a crucial role."
+    "example": "The **projection** is very important in this context."
   },
   {
     "english": "projector",
     "chinese": "投影機",
     "pos": "n.",
-    "example": "This **projector**  plays a crucial role."
+    "example": "We need to consider the **projector**  carefully."
   },
   {
     "english": "substantial",
     "chinese": "大的;可觀的;基本上的",
     "pos": "adj.",
-    "example": "This is a very **substantial**  example."
+    "example": "The **substantial**  result exceeded our expectations."
   },
   {
     "english": "anticipate",
     "chinese": "預期，期望",
     "pos": "v.",
-    "example": "We must **anticipate** this issue immediately."
+    "example": "The team decided to **anticipate**  the project."
   },
   {
     "english": "sale",
     "chinese": "銷售",
     "pos": "n.",
-    "example": "This **sale**  plays a crucial role."
+    "example": "We need to consider the **sale**  carefully."
   },
   {
     "english": "sales",
@@ -1977,7 +1977,7 @@
     "english": "figure",
     "chinese": "數字 ;圖, 表",
     "pos": "n.",
-    "example": "We need to consider the **figure**  carefully."
+    "example": "The **figure** is very important in this context."
   },
   {
     "english": "figure",
@@ -1989,19 +1989,19 @@
     "english": "incur",
     "chinese": "招致;遭受",
     "pos": "v.",
-    "example": "We must **incur** this issue immediately."
+    "example": "It's important to **incur**  these requirements."
   },
   {
     "english": "occur",
     "chinese": "發生",
     "pos": "v.",
-    "example": "The team decided to **occur**  the project."
+    "example": "It's important to **occur**  these requirements."
   },
   {
     "english": "profit",
     "chinese": "利潤，盈利",
     "pos": "n.",
-    "example": "This **profit**  plays a crucial role."
+    "example": "We need to consider the **profit**  carefully."
   },
   {
     "english": "reliant",
@@ -2019,13 +2019,13 @@
     "english": "dispose",
     "chinese": "配置",
     "pos": "v.",
-    "example": "The team decided to **dispose**  the project."
+    "example": "We must **dispose** this issue immediately."
   },
   {
     "english": "curtail",
     "chinese": "縮減;限制",
     "pos": "v.",
-    "example": "The team decided to **curtail**  the project."
+    "example": "It's important to **curtail**  these requirements."
   },
   {
     "english": "deficit",
@@ -2043,13 +2043,13 @@
     "english": "proceeds",
     "chinese": "收入，收益",
     "pos": "n.",
-    "example": "The **proceeds** is very important in this context."
+    "example": "This **proceeds**  plays a crucial role."
   },
   {
     "english": "proceed",
     "chinese": "繼續進行，繼續做",
     "pos": "v.",
-    "example": "We must **proceed** this issue immediately."
+    "example": "The team decided to **proceed**  the project."
   },
   {
     "english": "reimburse",
@@ -2061,7 +2061,7 @@
     "english": "considerably",
     "chinese": "相當大地;相當多地",
     "pos": "adv.",
-    "example": "We must **considerably** this issue immediately."
+    "example": "It's important to **considerably**  these requirements."
   },
   {
     "english": "adequate",
@@ -2073,13 +2073,13 @@
     "english": "allocate",
     "chinese": "分配;分派;",
     "pos": "v.",
-    "example": "We must **allocate** this issue immediately."
+    "example": "The team decided to **allocate**  the project."
   },
   {
     "english": "interrupt",
     "chinese": "打斷（其他人說話）",
     "pos": "v.",
-    "example": "It's important to **interrupt**  these requirements."
+    "example": "We must **interrupt** this issue immediately."
   },
   {
     "english": "prompt",
@@ -2091,7 +2091,7 @@
     "english": "prompt",
     "chinese": "迅速的;敏捷的;及時的",
     "pos": "adj.",
-    "example": "The **prompt**  result exceeded our expectations."
+    "example": "We found a **prompt**  solution to the problem."
   },
   {
     "english": "prompt",
@@ -2109,25 +2109,25 @@
     "english": "deduct",
     "chinese": "減去;扣除",
     "pos": "v.",
-    "example": "We must **deduct** this issue immediately."
+    "example": "It's important to **deduct**  these requirements."
   },
   {
     "english": "amend",
     "chinese": "修訂，修正",
     "pos": "v.",
-    "example": "The team decided to **amend**  the project."
+    "example": "It's important to **amend**  these requirements."
   },
   {
     "english": "exempt",
     "chinese": "免除，豁免",
     "pos": "v.",
-    "example": "It's important to **exempt**  these requirements."
+    "example": "The team decided to **exempt**  the project."
   },
   {
     "english": "fiscal",
     "chinese": "財政的;國庫的",
     "pos": "adj.",
-    "example": "We found a **fiscal**  solution to the problem."
+    "example": "This is a very **fiscal**  example."
   },
   {
     "english": "incidental",
@@ -2139,7 +2139,7 @@
     "english": "incident",
     "chinese": "意外事件",
     "pos": "n.",
-    "example": "The **incident** is very important in this context."
+    "example": "This **incident**  plays a crucial role."
   },
   {
     "english": "inflation",
@@ -2163,6 +2163,348 @@
     "english": "turnover",
     "chinese": "營業額，成交量",
     "pos": "n.",
-    "example": "The **turnover** is very important in this context."
+    "example": "We need to consider the **turnover**  carefully."
+  },
+  {
+    "english": "violation",
+    "chinese": "違反，違背",
+    "pos": "n.",
+    "example": "We need to consider the **violation**  carefully."
+  },
+  {
+    "english": "violence",
+    "chinese": "暴力行為",
+    "pos": "n.",
+    "example": "The **violence** is very important in this context."
+  },
+  {
+    "english": "volunteer",
+    "chinese": "自願參加者",
+    "pos": "n.",
+    "example": "The **volunteer** is very important in this context."
+  },
+  {
+    "english": "volunteer",
+    "chinese": "自願做;無償做",
+    "pos": "v.",
+    "example": "We must **volunteer** this issue immediately."
+  },
+  {
+    "english": "foresee",
+    "chinese": "預見, 預知",
+    "pos": "v.",
+    "example": "It's important to **foresee**  these requirements."
+  },
+  {
+    "english": "asset",
+    "chinese": "優點 ; 資產",
+    "pos": "n.",
+    "example": "This **asset**  plays a crucial role."
+  },
+  {
+    "english": "considerable",
+    "chinese": "相當大的；相當多的",
+    "pos": "adj.",
+    "example": "This is a very **considerable**  example."
+  },
+  {
+    "english": "last",
+    "chinese": "持續",
+    "pos": "v.",
+    "example": "The team decided to **last**  the project."
+  },
+  {
+    "english": "last",
+    "chinese": "上次的 ; 最近的 ; 最後的",
+    "pos": "adj.",
+    "example": "This is a very **last**  example."
+  },
+  {
+    "english": "least",
+    "chinese": "最少",
+    "pos": "adv.",
+    "example": "It's important to **least**  these requirements."
+  },
+  {
+    "english": "late",
+    "chinese": "晚的;遲的",
+    "pos": "adj.",
+    "example": "This is a very **late**  example."
+  },
+  {
+    "english": "imply",
+    "chinese": "暗示",
+    "pos": "v.",
+    "example": "The team decided to **imply**  the project."
+  },
+  {
+    "english": "apply",
+    "chinese": "應用",
+    "pos": "v.",
+    "example": "The team decided to **apply**  the project."
+  },
+  {
+    "english": "emerge",
+    "chinese": "出現 ; 浮現 ; 顯露",
+    "pos": "v.",
+    "example": "We must **emerge** this issue immediately."
+  },
+  {
+    "english": "merge",
+    "chinese": "合併",
+    "pos": "v.",
+    "example": "It's important to **merge**  these requirements."
+  },
+  {
+    "english": "migrant",
+    "chinese": "移民",
+    "pos": "n.",
+    "example": "This **migrant**  plays a crucial role."
+  },
+  {
+    "english": "migrant",
+    "chinese": "遷移的",
+    "pos": "adj.",
+    "example": "The **migrant**  result exceeded our expectations."
+  },
+  {
+    "english": "migrate",
+    "chinese": "遷移",
+    "pos": "v.",
+    "example": "The team decided to **migrate**  the project."
+  },
+  {
+    "english": "vital",
+    "chinese": "極重要的",
+    "pos": "adj.",
+    "example": "The **vital**  result exceeded our expectations."
+  },
+  {
+    "english": "via",
+    "chinese": "經由 ; 透過",
+    "pos": "prep.",
+    "example": "This is an example of **via** ."
+  },
+  {
+    "english": "persist",
+    "chinese": "持續 ; 堅持不懈",
+    "pos": "v.",
+    "example": "We must **persist** this issue immediately."
+  },
+  {
+    "english": "insist",
+    "chinese": "堅持 ; 強調",
+    "pos": "v.",
+    "example": "The team decided to **insist**  the project."
+  },
+  {
+    "english": "consist of",
+    "chinese": "由…組成",
+    "pos": "v.",
+    "example": "It's important to **consist of**  these requirements."
+  },
+  {
+    "english": "renowned",
+    "chinese": "著名的",
+    "pos": "adj.",
+    "example": "We found a **renowned**  solution to the problem."
+  },
+  {
+    "english": "waive",
+    "chinese": "放棄（權利）;不遵守（規則）",
+    "pos": "v.",
+    "example": "It's important to **waive**  these requirements."
+  },
+  {
+    "english": "authority",
+    "chinese": "權力 ; 當局",
+    "pos": "n.",
+    "example": "We need to consider the **authority**  carefully."
+  },
+  {
+    "english": "acquire",
+    "chinese": "取得 ; 收購",
+    "pos": "v.",
+    "example": "It's important to **acquire**  these requirements."
+  },
+  {
+    "english": "surpass",
+    "chinese": "超過，優於",
+    "pos": "v.",
+    "example": "It's important to **surpass**  these requirements."
+  },
+  {
+    "english": "improbable",
+    "chinese": "不大可能發生的",
+    "pos": "adj.",
+    "example": "We found a **improbable**  solution to the problem."
+  },
+  {
+    "english": "reveal",
+    "chinese": "揭露;洩露",
+    "pos": "v.",
+    "example": "It's important to **reveal**  these requirements."
+  },
+  {
+    "english": "premier",
+    "chinese": "首位的，首要的",
+    "pos": "adj.",
+    "example": "The **premier**  result exceeded our expectations."
+  },
+  {
+    "english": "convene",
+    "chinese": "召開，召集（會議）",
+    "pos": "v.",
+    "example": "It's important to **convene**  these requirements."
+  },
+  {
+    "english": "refute",
+    "chinese": "駁斥 ; 反駁",
+    "pos": "v.",
+    "example": "It's important to **refute**  these requirements."
+  },
+  {
+    "english": "coordination",
+    "chinese": "協調，調節",
+    "pos": "n.",
+    "example": "This **coordination**  plays a crucial role."
+  },
+  {
+    "english": "unanimous",
+    "chinese": "意見一致的;（決定或裁決）一致通過的",
+    "pos": "adj.",
+    "example": "This is a very **unanimous**  example."
+  },
+  {
+    "english": "convince",
+    "chinese": "說服;使相信",
+    "pos": "v.",
+    "example": "It's important to **convince**  these requirements."
+  },
+  {
+    "english": "consensus",
+    "chinese": "共識 ; 與論",
+    "pos": "n.",
+    "example": "This **consensus**  plays a crucial role."
+  },
+  {
+    "english": "defer",
+    "chinese": "延期",
+    "pos": "v.",
+    "example": "It's important to **defer**  these requirements."
+  },
+  {
+    "english": "postpone",
+    "chinese": "延期",
+    "pos": "v.",
+    "example": "It's important to **postpone**  these requirements."
+  },
+  {
+    "english": "determine",
+    "chinese": "決定 ; 影響 ; 查明",
+    "pos": "v.",
+    "example": "The team decided to **determine**  the project."
+  },
+  {
+    "english": "comment",
+    "chinese": "評論",
+    "pos": "v. n.",
+    "example": "This **comment**  plays a crucial role."
+  },
+  {
+    "english": "commend",
+    "chinese": "讚揚，稱讚",
+    "pos": "v.",
+    "example": "We must **commend** this issue immediately."
+  },
+  {
+    "english": "demand",
+    "chinese": "需要，要求",
+    "pos": "v. n.",
+    "example": "We need to consider the **demand**  carefully."
+  },
+  {
+    "english": "object",
+    "chinese": "物體 ; 目標",
+    "pos": "n.",
+    "example": "This **object**  plays a crucial role."
+  },
+  {
+    "english": "object",
+    "chinese": "反對",
+    "pos": "v.",
+    "example": "The team decided to **object**  the project."
+  },
+  {
+    "english": "coincidental",
+    "chinese": "碰巧的；巧合的",
+    "pos": "adj.",
+    "example": "The **coincidental**  result exceeded our expectations."
+  },
+  {
+    "english": "brief",
+    "chinese": "短暫的;簡短的",
+    "pos": "adj.",
+    "example": "This is a very **brief**  example."
+  },
+  {
+    "english": "brief",
+    "chinese": "簡短說明",
+    "pos": "v. n.",
+    "example": "We need to consider the **brief**  carefully."
+  },
+  {
+    "english": "emphasis",
+    "chinese": "重視;強調",
+    "pos": "n.",
+    "example": "We need to consider the **emphasis**  carefully."
+  },
+  {
+    "english": "emphasize",
+    "chinese": "重視;強調",
+    "pos": "v.",
+    "example": "The team decided to **emphasize**  the project."
+  },
+  {
+    "english": "persuasive",
+    "chinese": "有說服力的，令人信服的",
+    "pos": "adj.",
+    "example": "We found a **persuasive**  solution to the problem."
+  },
+  {
+    "english": "persuade",
+    "chinese": "勸服;說服",
+    "pos": "v.",
+    "example": "The team decided to **persuade**  the project."
+  },
+  {
+    "english": "pursue",
+    "chinese": "追求",
+    "pos": "v.",
+    "example": "The team decided to **pursue**  the project."
+  },
+  {
+    "english": "adjourn",
+    "chinese": "（使）休會;（使）休庭",
+    "pos": "v.",
+    "example": "It's important to **adjourn**  these requirements."
+  },
+  {
+    "english": "preside",
+    "chinese": "主持 (會議)",
+    "pos": "v.",
+    "example": "The team decided to **preside**  the project."
+  },
+  {
+    "english": "irrelevant",
+    "chinese": "不相關的",
+    "pos": "adj.",
+    "example": "The **irrelevant**  result exceeded our expectations."
+  },
+  {
+    "english": "constraint",
+    "chinese": "限制；束縛；約束",
+    "pos": "n.",
+    "example": "This **constraint**  plays a crucial role."
   }
 ]
