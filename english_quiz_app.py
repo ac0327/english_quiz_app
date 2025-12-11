@@ -193,8 +193,8 @@ def generate_matching_question(count=10):
 # ==========================================
 
 def main():
-    st.set_page_config(page_title="TOEIC, Target 900!", page_icon="📚", layout="wide")
-    st.title("🎓 TOEIC Vocabulary Test App")
+    st.set_page_config(page_title="TOEIC Vocabulary Test", page_icon="📚", layout="wide")
+    st.title("🎓 TOEIC Target: 900")
     
     if not VOCAB_DB: 
         st.warning("⚠️ 沒有單字資料！")
@@ -597,4 +597,5 @@ def main():
 
 if __name__ == "__main__": 
     main()
+
 
