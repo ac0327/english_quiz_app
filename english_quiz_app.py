@@ -237,7 +237,7 @@ def main():
     
     # ==================== 克漏字測驗 ====================
     with tab1:
-        st.subheader("克漏字測驗")
+        st.subheader("維修中XX")
         
         if st.session_state.cloze_q is None:
             st.session_state.cloze_q = generate_question('cloze')
@@ -597,5 +597,6 @@ def main():
 
 if __name__ == "__main__": 
     main()
+
 
 
